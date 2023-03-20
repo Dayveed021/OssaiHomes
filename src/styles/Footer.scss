@@ -10,11 +10,10 @@
     background-color: rgba(204, 204, 204, 1);
     display: flex;
     justify-content: space-around;
-    align-items: center;
 
 
     .foot-logo {
-        margin-top: -125px;
+        padding-top: 11px;
         padding-left: 157px;
         display: flex;
         gap: 14px;
@@ -35,12 +34,9 @@
             span {
                 height: 24px;
                 width: 24px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                border: 1px solid black;
+                border-style: dashed;
                 border-radius: 50%;
-                background-color: black;
-                color: white;
             }
         }
     }
@@ -49,8 +45,8 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        gap: 15%;
-        align-items: flex-start;
+        gap: 150px;
+        align-items: center;
 
         .footer-con {
             display: flex;
@@ -67,22 +63,6 @@
                     cursor: pointer;
                 }
             }
-        }
-    }
-}
-
-@media screen and (max-width:768px) {
-    .footer {
-        flex-direction: column;
-        align-items: center;
-        .foot-logo{
-            padding-left: 0px;
-            margin-top: 0px;
-        }
-
-        .footer-list {
-            gap: 0px;
-            justify-content: space-evenly;
         }
     }
 }
