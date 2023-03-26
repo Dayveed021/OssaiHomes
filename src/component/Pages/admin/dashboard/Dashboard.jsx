@@ -1,4 +1,6 @@
 import AdminLayout from "../home/AdminLayout"
+import ActivitesBlock from "../reusables/ActivitesBlock";
+import Listing from "../reusables/Listing";
 import "./dashboard.scss";
 
 
@@ -14,20 +16,15 @@ const Dashboard = ()=>{
 const Content = ()=>{
     return (
         <div className="dashboard-content">
-            <div className="block">
-                <div className="block1">
-                    <h4>Total Agents</h4>
-                    <p>1500</p>
-                </div>
-                <div className="block1">
-                    <h4>Total Properties</h4>
-                    <p>1000</p>
-                </div>
-                <div className="block1">
-                    <h4>Latest Transactions</h4>
-                    <p>500</p>
-                </div>
-            </div>
+            <ActivitesBlock 
+            firstBlockLetters="Total Agents"
+            firstBlockNumber="1500"
+            secondBlockLetters="Total Properties"
+            secondBlockNumber="1000"
+            thirdBlockLetters="latest Transactions"
+            thirdBlockNumber="500"
+            />
+           
             <div className="agents-header">
                 <h2>Latest Agents</h2>
                 <img src="../../flaticons/customer2.png" alt="icon" />
@@ -141,187 +138,10 @@ const Content = ()=>{
                 <img src="../../flaticons/customer2.png" alt="icon" />
             </div>
             <div className="listing">
-                <div className="detail-list">
-                    <div className="single-listing">
-                    
-                    <div className="image">
-                        <img src="../../flaticons/Rectangle346.png" alt="room" />
-                    </div>
-                    <div className="list-content">
-                        <h5 className="details">Furnished 5 Bedroom</h5>
-                        <div className="address">
-                            <img src="../../flaticons/location1.png" alt="icon" />
-                            <p>No. 10 Iterigbe, Warri, Delta State</p>
-                        </div>
-                        <div className="date">
-                            <p className="date-left">Added: 21-02-23</p>
-                            <p className="date-right">Updated: 21-02-23</p>
-                        </div>
-                        <div className="views">
-                            <p className="view-left">Views: 0</p>
-                            <p className="view-right">Automatic boost: 0</p>
-                        </div>
-                        <div className="prices">
-                            <p className="price-left">25,000,000</p>
-                            <p className="price-right">per year</p>
-                        </div>
-                        <div className="apartment-details">
-                            <div>
-                                <img src="../../flaticons/water-closet1.png" alt="" />
-                                <p>6 Toilet</p>
-                            </div>
-                            <div>
-                                <img src="../../flaticons/water-closet1.png" alt="" />
-                                <p>6 Toilet</p>
-                            </div>
-                            <div>
-                                <img src="../../flaticons/water-closet1.png" alt="" />
-                                <p>6 Toilet</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    </div>
-                    <div  className="btn-list">
-                        <button>Action <img src="../../flaticons/expand-button3.png" alt="" /></button>
-                    </div>
-                </div>
-                <div className="detail-list">
-                    <div className="single-listing">
-                    
-                    <div className="image">
-                        <img src="../../flaticons/Rectangle346.png" alt="room" />
-                    </div>
-                    <div className="list-content">
-                        <h5 className="details">Furnished 5 Bedroom</h5>
-                        <div className="address">
-                            <img src="../../flaticons/location1.png" alt="icon" />
-                            <p>No. 10 Iterigbe, Warri, Delta State</p>
-                        </div>
-                        <div className="date">
-                            <p className="date-left">Added: 21-02-23</p>
-                            <p className="date-right">Updated: 21-02-23</p>
-                        </div>
-                        <div className="views">
-                            <p className="view-left">Views: 0</p>
-                            <p className="view-right">Automatic boost: 0</p>
-                        </div>
-                        <div className="prices">
-                            <p className="price-left">25,000,000</p>
-                            <p className="price-right">per year</p>
-                        </div>
-                        <div className="apartment-details">
-                            <div>
-                                <img src="../../flaticons/water-closet1.png" alt="" />
-                                <p>6 Toilet</p>
-                            </div>
-                            <div>
-                                <img src="../../flaticons/water-closet1.png" alt="" />
-                                <p>6 Toilet</p>
-                            </div>
-                            <div>
-                                <img src="../../flaticons/water-closet1.png" alt="" />
-                                <p>6 Toilet</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    </div>
-                    <div  className="btn-list">
-                        <button>Action <img src="../../flaticons/expand-button3.png" alt="" /></button>
-                    </div>
-                </div>
-                <div className="detail-list">
-                    <div className="single-listing">
-                    
-                    <div className="image">
-                        <img src="../../flaticons/Rectangle346.png" alt="room" />
-                    </div>
-                    <div className="list-content">
-                        <h5 className="details">Furnished 5 Bedroom</h5>
-                        <div className="address">
-                            <img src="../../flaticons/location1.png" alt="icon" />
-                            <p>No. 10 Iterigbe, Warri, Delta State</p>
-                        </div>
-                        <div className="date">
-                            <p className="date-left">Added: 21-02-23</p>
-                            <p className="date-right">Updated: 21-02-23</p>
-                        </div>
-                        <div className="views">
-                            <p className="view-left">Views: 0</p>
-                            <p className="view-right">Automatic boost: 0</p>
-                        </div>
-                        <div className="prices">
-                            <p className="price-left">25,000,000</p>
-                            <p className="price-right">per year</p>
-                        </div>
-                        <div className="apartment-details">
-                            <div>
-                                <img src="../../flaticons/water-closet1.png" alt="" />
-                                <p>6 Toilet</p>
-                            </div>
-                            <div>
-                                <img src="../../flaticons/water-closet1.png" alt="" />
-                                <p>6 Toilet</p>
-                            </div>
-                            <div>
-                                <img src="../../flaticons/water-closet1.png" alt="" />
-                                <p>6 Toilet</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    </div>
-                    <div  className="btn-list">
-                        <button>Action <img src="../../flaticons/expand-button3.png" alt="" /></button>
-                    </div>
-                </div>
-                <div className="detail-list">
-                    <div className="single-listing">
-                    
-                    <div className="image">
-                        <img src="../../flaticons/Rectangle346.png" alt="room" />
-                    </div>
-                    <div className="list-content">
-                        <h5 className="details">Furnished 5 Bedroom</h5>
-                        <div className="address">
-                            <img src="../../flaticons/location1.png" alt="icon" />
-                            <p>No. 10 Iterigbe, Warri, Delta State</p>
-                        </div>
-                        <div className="date">
-                            <p className="date-left">Added: 21-02-23</p>
-                            <p className="date-right">Updated: 21-02-23</p>
-                        </div>
-                        <div className="views">
-                            <p className="view-left">Views: 0</p>
-                            <p className="view-right">Automatic boost: 0</p>
-                        </div>
-                        <div className="prices">
-                            <p className="price-left">25,000,000</p>
-                            <p className="price-right">per year</p>
-                        </div>
-                        <div className="apartment-details">
-                            <div>
-                                <img src="../../flaticons/water-closet1.png" alt="" />
-                                <p>6 Toilet</p>
-                            </div>
-                            <div>
-                                <img src="../../flaticons/water-closet1.png" alt="" />
-                                <p>6 Toilet</p>
-                            </div>
-                            <div>
-                                <img src="../../flaticons/water-closet1.png" alt="" />
-                                <p>6 Toilet</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    </div>
-                    <div  className="btn-list">
-                        <button>Action <img src="../../flaticons/expand-button3.png" alt="" /></button>
-                    </div>
-                </div>
-                
+                <Listing />
+                <Listing />
+                <Listing />
+                <Listing />           
                 <div className="btn-btn">
                     <button className="btn">View all
                         <img src="flaticons/search2.png" alt="icon" />
