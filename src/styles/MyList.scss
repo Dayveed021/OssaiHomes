@@ -3,3 +3,88 @@
     padding: 0px;
     box-sizing: 0px;
 }
+.searchNav{
+ background: #E4E4E4;
+height:45px ;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-around;
+z-index: 1;
+}
+.searchNav ul{
+    list-style:none;
+    display: flex;
+    margin-right: 250px;
+}
+.searchNav ul li{
+    margin: 12px;
+    border-radius: 5px;
+}
+
+.search_bar{
+    margin-left: 30px;
+    width: 30%;
+    font-size: 0.9em;
+    border-radius: 5px;
+    height: 28px;
+    border: 0.5px solid;
+}
+    
+.search_bar-s{
+    border: 0.5px solid ;
+    height: 28px;
+    width: 100px;
+    justify-content: center;
+
+}
+.search_bar-s , .search_bar-b {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 3px;
+    padding-left:5px;
+    padding-right: 5px;
+}
+ i{
+    margin-top: 5px;
+}
+.search_bar-b{
+    border: 0.5px solid;
+    height: 28x;
+    width:130px;
+}
+.main_search{
+    margin: 20px 0px 0px 80px;
+}
+.main_search p, .main_search h1{
+    margin-left: 15px;
+}
+.sort_box{
+    border: 0.5px solid ;
+    border-radius: 5px;
+    height: 22px;
+    width: 140px;
+    display: flex;
+    padding-top: 2px;
+    padding-left: 4px;
+    position: absolute;
+    top: 167px;
+    left: 550px;
+}
+.sort_box i{
+    padding-left: 12px;
+
+}
+.prop-container{
+    border: 2px solid;
+    height: 200px;
+    width: 50%;
+    padding: 5px 5px 5px 5px;
+    margin: 10px;
+    display: flex;
+}
+.ASF{
+    border: 1px solid ;
+    height: 50%;
+    width: 20%;
+}
