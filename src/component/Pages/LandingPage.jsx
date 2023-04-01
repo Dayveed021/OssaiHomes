@@ -11,7 +11,7 @@ const LandingPage = () => {
         <div className="hero-con">
           <div className="hero-opacity">
             <div className="hero-contents">
-              <h1>Find a propery in Nigeria</h1>
+              <h1>Find a property in Nigeria</h1>
               <input type="text" placeholder=" Search a Region" />
               <div className="search-props">
                 <select name="" id="">
@@ -78,7 +78,7 @@ const LandingPage = () => {
                 <div className="list-card">
                   <img src={home} alt="" />
                   <div className="list-desc">
-                    <h2>5 Bedromm Duplex</h2>
+                    <h2>5 Bedroom Duplex</h2>
                     <ul>
                       <li>Warri Delta State</li>
                       <li>No.2 Iterigbi Warri Delta State</li>
@@ -93,7 +93,7 @@ const LandingPage = () => {
                 <div className="list-card">
                   <img src={home} alt="" />
                   <div className="list-desc">
-                    <h2>5 Bedromm Duplex</h2>
+                    <h2>5 Bedroom Duplex</h2>
                     <ul>
                       <li>Warri Delta State</li>
                       <li>No.2 Iterigbi Warri Delta State</li>
@@ -108,7 +108,7 @@ const LandingPage = () => {
                 <div className="list-card">
                   <img src={home} alt="" />
                   <div className="list-desc">
-                    <h2>5 Bedromm Duplex</h2>
+                    <h2>5 Bedroom Duplex</h2>
                     <ul>
                       <li>Warri Delta State</li>
                       <li>No.2 Iterigbi Warri Delta State</li>
@@ -123,7 +123,7 @@ const LandingPage = () => {
                 <div className="list-card">
                   <img src={home} alt="" />
                   <div className="list-desc">
-                    <h2>5 Bedromm Duplex</h2>
+                    <h2>5 Bedroom Duplex</h2>
                     <ul>
                       <li>Warri Delta State</li>
                       <li>No.2 Iterigbi Warri Delta State</li>
@@ -138,7 +138,7 @@ const LandingPage = () => {
                 <div className="list-card">
                   <img src={home} alt="" />
                   <div className="list-desc">
-                    <h2>5 Bedromm Duplex</h2>
+                    <h2>5 Bedroom Duplex</h2>
                     <ul>
                       <li>Warri Delta State</li>
                       <li>No.2 Iterigbi Warri Delta State</li>
@@ -153,7 +153,7 @@ const LandingPage = () => {
                 <div className="list-card">
                   <img src={home} alt="" />
                   <div className="list-desc">
-                    <h2>5 Bedromm Duplex</h2>
+                    <h2>5 Bedroom Duplex</h2>
                     <ul>
                       <li>Warri Delta State</li>
                       <li>No.2 Iterigbi Warri Delta State</li>

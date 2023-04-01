@@ -11,4 +11,11 @@ button {
   color: white;
   font-weight: 500;
   border-radius: 5px;
+  transition: background-color 0.5s ease;
+  &:hover {
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #3f7843;
+    color: #3f7843;
+  }
 }
