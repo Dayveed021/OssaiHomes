@@ -1,5 +1,5 @@
 import React from 'react'
-import "../../styles/MyList.scss";
+import "../../styles/MyList.css";
 import { PropertyData } from '../Data/Data_1';
 
 function MyList () {
