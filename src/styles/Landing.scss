@@ -1,5 +1,202 @@
+@import "./helper";
+
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: 0px;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: 0px;
+}
+
+.landing_page {
+  .hero-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../../public/Pictures/LandingImg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 510px;
+    .hero-opacity {
+      background: rgba(33, 33, 33, 0.3);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .hero-contents {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 16px;
+        width: 50%;
+        @media screen and (max-width: 769px) {
+          width: 95%;
+        }
+      }
+      h1 {
+        color: white;
+        font-weight: 800;
+        font-size: 40px;
+      }
+      input {
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        font-size: 16px;
+      }
+      .search-props {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 10px;
+        @media screen and (max-width: 964px) {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+          gap: 16px;
+        }
+        select {
+          border-radius: 5px;
+          padding: 7px 20px 7px 20px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  .services {
+    .service-con {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 43px;
+      padding: 30px 0px 30px 0px;
+      h1 {
+        color: #3f7843;
+      }
+      .service-cards {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .card {
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          margin-bottom: 20px;
+          @media screen and (max-width: 769px) {
+            flex-direction: column;
+            gap: 50px;
+          }
+          .card-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px 30px 20px 30px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            width: 20%;
+            gap: 18px;
+            @media screen and (max-width: 768px) {
+              width: 70%;
+              padding: 10px;
+            }
+            h2 {
+              color: #3f7843;
+            }
+            p {
+              text-align: center;
+              font-weight: 400;
+              line-height: 27px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .featured {
+    .featured-con {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      background-color: black;
+      padding: 30px 0px 30px 0px;
+      gap: 30px;
+      h1 {
+        color: white;
+      }
+      .listings {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        .list-con {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 36px;
+          @media screen and (max-width: 769px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 90%;
+          }
+          @media screen and (max-width: 475px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            grid-template-columns: none;
+            width: 100%;
+          }
+        }
+        .list-card {
+          background: #ffff;
+          border-radius: 10px;
+          transition: all 0.3s ease-out;
+          &:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+            z-index: 1;
+          }
+          @media screen and (max-width: 475px) {
+            width: 90%;
+          }
+          img {
+            width: 100%;
+          }
+          .list-desc {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: 10px 25px 10px 25px;
+            gap: 5px;
+            ul {
+              list-style: none;
+            }
+            .price {
+              h2 {
+                color: #3f7843;
+                span {
+                  font-size: 14px;
+                  font-weight: 400;
+                  color: black;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
