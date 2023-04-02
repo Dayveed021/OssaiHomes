@@ -1,10 +1,16 @@
-import React from 'react'
+import React from "react";
 import "../../styles/List.scss";
+import { Navbar } from "../Navbar";
+import { Footer } from "../Footer";
 
 const List = () => {
-    return (
-        <div>List</div>
-    )
-}
+  return (
+    <div>
+      <Navbar />
+      <div className="listpage">List</div>
+      <Footer />
+    </div>
+  );
+};
 
-export default List
+export default List;

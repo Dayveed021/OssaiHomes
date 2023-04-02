@@ -4,9 +4,12 @@ import house from "./icons/house 1.png";
 import duplex from "./icons/duplex 1.png";
 import building from "./icons/icons8-buildings-64 1.png";
 import home from "./Pics/Image2.png";
+import { Navbar } from "../Navbar";
+import { Footer } from "../Footer";
 const LandingPage = () => {
   return (
     <div>
+      <Navbar />
       <div className="landing_page">
         <div className="hero-con">
           <div className="hero-opacity">
@@ -170,6 +173,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
