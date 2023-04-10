@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../styles/Landing.scss";
 import house from "./icons/house 1.png";
 import duplex from "./icons/duplex 1.png";
@@ -14,11 +14,11 @@ import {
   faCircleCheck,
   faCircleDot,
 } from "@fortawesome/free-solid-svg-icons";
-import opt from "./Pics/Rectangle 194.png";
-import bath from "./icons/bath 1.png";
-import bed from "./icons/double-bed 1.png";
-import toilet from "./icons/water-closet 1.png";
-import fav from "./icons/heart 1.png";
+// import opt from "./Pics/Rectangle 194.png";
+// import bath from "./icons/bath 1.png";
+// import bed from "./icons/double-bed 1.png";
+// import toilet from "./icons/water-closet 1.png";
+// import fav from "./icons/heart 1.png";
 
 const popularListings = [
   {
@@ -27,10 +27,7 @@ const popularListings = [
     image: "https://example.com/house1.jpg",
     description: "This is a beautiful house located in Lagos, Nigeria.",
     address: "No 1, Lagos Street, Lagos, Nigeria",
-    price: 5000,
-    bedrooms: 3,
-    bathrooms: 2,
-    guestToilets: 1,
+    price: "₦5000",
   },
   {
     id: 2,
@@ -38,10 +35,7 @@ const popularListings = [
     image: "https://example.com/house2.jpg",
     description: "This is a luxury apartment located in Abuja, Nigeria.",
     address: "No 1, Abuja Street, Abuja, Nigeria",
-    price: 8000,
-    bedrooms: 4,
-    bathrooms: 3,
-    guestToilets: 2,
+    price: "₦8000",
   },
   {
     id: 3,
@@ -49,10 +43,7 @@ const popularListings = [
     image: "https://example.com/house3.jpg",
     description: "This is a cozy cottage located in Enugu, Nigeria.",
     address: "No 1, Enugu Street, Enugu, Nigeria",
-    price: 3000,
-    bedrooms: 2,
-    bathrooms: 1,
-    guestToilets: 0,
+    price: "₦3000",
   },
   {
     id: 4,
@@ -60,10 +51,7 @@ const popularListings = [
     image: "https://example.com/house4.jpg",
     description: "This is a spacious villa located in Port Harcourt, Nigeria.",
     address: "No 1, Port Harcourt Street, Port Harcourt, Nigeria",
-    price: 12000,
-    bedrooms: 5,
-    bathrooms: 4,
-    guestToilets: 3,
+    price: "₦1200",
   },
   {
     id: 5,
@@ -71,10 +59,7 @@ const popularListings = [
     image: "https://example.com/house5.jpg",
     description: "This is an elegant mansion located in Ibadan, Nigeria.",
     address: "No 1, Ibadan Street, Ibadan, Nigeria",
-    price: 15000,
-    bedrooms: 6,
-    bathrooms: 5,
-    guestToilets: 4,
+    price: "₦15000",
   },
   {
     id: 6,
@@ -82,10 +67,7 @@ const popularListings = [
     image: "https://example.com/house6.jpg",
     description: "This is a modern duplex located in Kano, Nigeria.",
     address: "No 1, Kano Street, Kano, Nigeria",
-    price: 10000,
-    bedrooms: 4,
-    bathrooms: 3,
-    guestToilets: 2,
+    price: "₦10000",
   },
   {
     id: 7,
@@ -93,10 +75,7 @@ const popularListings = [
     image: "https://example.com/house7.jpg",
     description: "This is a classy bungalow located in Owerri, Nigeria.",
     address: "No 1, Owerri Street, Owerri, Nigeria",
-    price: 4000,
-    bedrooms: 2,
-    bathrooms: 1,
-    guestToilets: 0,
+    price: "₦4000",
   },
   {
     id: 8,
@@ -105,9 +84,6 @@ const popularListings = [
     address: "No 3, Adeyinka street, Lekki Phase 1, Lagos",
     image: "https://via.placeholder.com/300x200.png?text=Listing+Image",
     price: "₦300,000",
-    bedrooms: 3,
-    bathrooms: 2,
-    guestToilets: 1,
   },
   {
     id: 9,
@@ -116,9 +92,6 @@ const popularListings = [
     address: "No 12, Olu Adegbite street, Ikeja, Lagos",
     image: "https://via.placeholder.com/300x200.png?text=Listing+Image",
     price: "₦250,000",
-    bedrooms: 2,
-    bathrooms: 2,
-    guestToilets: 0,
   },
   {
     id: 10,
@@ -127,9 +100,6 @@ const popularListings = [
     address: "No 6, Alhaji Abdul street, Victoria Island, Lagos",
     image: "https://via.placeholder.com/300x200.png?text=Listing+Image",
     price: "₦500,000",
-    bedrooms: 4,
-    bathrooms: 3,
-    guestToilets: 1,
   },
   {
     id: 11,
@@ -138,9 +108,6 @@ const popularListings = [
     address: "No 5, Wole Olateju street, Surulere, Lagos",
     image: "https://via.placeholder.com/300x200.png?text=Listing+Image",
     price: "₦150,000",
-    bedrooms: 1,
-    bathrooms: 1,
-    guestToilets: 0,
   },
   {
     id: 12,
@@ -149,9 +116,6 @@ const popularListings = [
     address: "No 8, Adekunle Fajuyi street, GRA, Ikeja, Lagos",
     image: "https://via.placeholder.com/300x200.png?text=Listing+Image",
     price: "₦400,000",
-    bedrooms: 2,
-    bathrooms: 2,
-    guestToilets: 1,
   },
   {
     id: 13,
@@ -160,16 +124,37 @@ const popularListings = [
     address: "No 7, Bode Thomas street, Maryland, Lagos",
     image: "https://via.placeholder.com/300x200.png?text=Listing+Image",
     price: "₦350,000",
-    bedrooms: 3,
-    bathrooms: 2,
-    guestToilets: 1,
   },
 ];
 
 const LandingPage = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const listingsPerPage = 6;
+  const [listingsPerPage, setListingsPerPage] = useState(4);
   const totalPages = Math.ceil(popularListings.length / listingsPerPage);
+
+  useEffect(() => {
+    function handleResize() {
+      let newListingPerPage = 4;
+      if (window.innerWidth <= 993) {
+        newListingPerPage = 3;
+      }
+      if (window.innerWidth <= 768) {
+        newListingPerPage = 2;
+      }
+      if (window.innerWidth <= 425) {
+        newListingPerPage = 1;
+      }
+      setListingsPerPage(newListingPerPage);
+    }
+
+    handleResize(); // Set initial value on component mount
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [popularListings]); // Re-run the effect when the popularListings prop changes
 
   const handleNextPage = () => {
     if (currentPage < totalPages - 1) {
@@ -355,6 +340,11 @@ const LandingPage = () => {
                 </div>
               </div>
             </div>
+            <button
+              style={{ padding: "15px 40px 15px 40px", fontSize: "16px" }}
+            >
+              View More
+            </button>
           </div>
         </div>
         <div className="popular">
@@ -387,27 +377,6 @@ const LandingPage = () => {
                         <h2>
                           {listing.price} <span>/ month</span>
                         </h2>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="foot-con">
-                    <div className="foot-main">
-                      <div className="foot-elem">
-                        <span>
-                          <img src={bed} alt="" />{" "}
-                          <p>{listing.bedrooms} Bedrooms</p>
-                        </span>
-                        <span>
-                          <img src={bath} alt="" />{" "}
-                          <p>{listing.bathrooms} Bathrooms</p>
-                        </span>
-                        <span>
-                          <img src={toilet} alt="" />{" "}
-                          <p>{listing.guestToilets} Guest toilet</p>
-                        </span>
-                      </div>
-                      <div className="foot-fav">
-                        <img src={fav} alt="" />
                       </div>
                     </div>
                   </div>
