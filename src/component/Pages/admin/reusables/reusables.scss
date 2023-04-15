@@ -2,12 +2,13 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
-    grid-column-gap: 5.5rem;
+    grid-column-gap: 2rem;
     grid-row-gap: 0;
     margin-inline: 2rem;
+    width: 90%;
 
     .block1{
-        width: 19.75rem;
+        width: 100%;
         height: 9.6875rem;
         background: #ffffff;
         margin-block: 1.5rem;
@@ -16,6 +17,7 @@
         justify-content: center;
         align-items: center;
         border-radius: 0.9375rem;
+        box-sizing: content-box;
 
         h4{
            // width: 7.6875rem;
@@ -42,49 +44,53 @@
     justify-content: space-between;
     margin-block: 1.5rem;
     margin-inline: 2rem;
+    box-sizing: border-box;
 
     .search{
         padding: 1rem 2rem;
         background: #ffffff;
-        border-radius: 10px;
-        width: 427px;
+        border-radius: 0.625rem;
+        width: 26.6875rem;
         input{
             border: none;
             background: transparent;
             margin-left: 0.5rem;
-            width: 56px;
-            height: 17px;
+            width: 3.5rem;
+            height: 1.0625rem;
             color: #000000;
             font-weight: 500;
         }
+        input:focus{
+            outline: none;
+        }
 
         img{
-            width: 14px;
-            height: 14px;
+            width: 0.875rem;
+            height: 0.875rem;
         }
     }
 
     .filter{
         background: #ffffff;
-        border-radius: 5px;
+        border-radius: 0.3125rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 8px;
-        width: 95px;
+        padding: 0.5rem;
+        width: 5.9375rem;
 
         h4{
-            width: 41px;
-            height: 17px;
-            font-size: 18px;
+            width: 2.5625rem;
+            height: 1.0625rem;
+            font-size: 1.125rem;
             font-weight: 500;
         }
 
         img{
-            width: 14px;
-            height: 17px;
+            width: 0.875rem;
+            height: 1.0625rem;
             margin-left: 0.2rem;
-            margin-top: 5px;
+            margin-top: 0.3125rem;
         }
         
     }
@@ -99,6 +105,8 @@
     margin-top: 1.5rem;
     padding: 1rem;
     margin-inline: 2rem;
+    width: 90%;
+    box-sizing: border-box;
     
 
 
@@ -110,6 +118,7 @@
             border-radius: 0.3125rem;
             padding: 0.5rem;
             background: transparent;
+            color: #3F7843;
             img{
                 width: 0.9375rem;
                 height: 0.9375rem;
@@ -126,6 +135,7 @@
         background: #ffffff;
         display: flex;
         padding: 2rem;
+        box-sizing: border-box;
         .image{
             width:19.5rem;
             height: 14.25rem;
@@ -212,4 +222,90 @@
 
         
     }
+}
+
+.properties-content{
+    background: #ffffff;
+    border-radius: 0.625rem;
+    margin-inline: 2rem;
+    min-height: 37.625rem;
+    padding-bottom: 2rem;
+
+    .bloc-tabs{
+        align-items: center;
+        padding-left: 2rem;
+        display: flex;
+        height: 5.125rem;
+        border-width: 0 0 0.03125rem  0;
+        border-style: solid;
+        cursor: pointer;
+
+        .tabs{
+            font-size: 1.375rem;
+            line-height: 1.125rem;
+            height: 5.125rem;
+            h4{
+              font-weight: 500;
+              padding-block: 2rem;  
+            }
+            
+        }
+        .active-tabs{
+
+            border-width: 0 0 0.1875rem  0;
+            border-style: solid;
+            border-color: #3F7843;
+
+        }
+
+    }
+
+    .select-action{
+        display: flex;
+        justify-content: space-between;
+        background: #F0F0F0;
+        border-radius: 0.3125rem;
+        margin-inline: 2rem;
+        padding: 1rem;
+        margin-block: 1rem;
+        align-items: center;
+
+        .select{
+            display: flex;
+            align-items: center;
+            .btn-green{
+                background-color: #3F7843;
+                margin-left: 0.2rem;
+                height: 0.875rem;
+                width: 0.875rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 3px;
+                border: 0.03125rem solid #3F7843;
+
+                img{
+                    width: 0.5rem;
+                    height: 0.5rem;
+                }
+            }
+
+            
+        }
+
+        .action{
+            border-radius: 0.625rem;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                margin-left: 0.5rem;
+            }
+
+        }
+    }
+
+
 }

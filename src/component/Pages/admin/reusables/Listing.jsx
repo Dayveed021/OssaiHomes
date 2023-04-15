@@ -1,4 +1,6 @@
 import React from 'react'
+import "./reusables.scss";
+
 
 const Listing = () => {
   return (
