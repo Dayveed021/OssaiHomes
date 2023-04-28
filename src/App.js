@@ -9,6 +9,7 @@ import { Buyy } from "./component/Pages/Buyy";
 import List from "./component/Pages/List";
 import MyList from "./component/Pages/MyList";
 import MyAgent from "./component/Pages/MyAgent";
+import AgentDetails from "./component/Pages/admin/agents/Agent-details";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/admin" element={<Dashboard />} />
         <Route path="/admin/profile" element={<Profile />} />
         <Route path="/admin/agents" element={<Agents />} />
+        <Route path="/admin/agents/details" element={<AgentDetails />} />
         <Route path="/admin/transactions" element={<Transactions />} />
         <Route path="/admin/properties" element={<Properties />} />
       </Routes>
