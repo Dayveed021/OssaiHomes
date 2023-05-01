@@ -1,0 +1,43 @@
+.transaction-content{
+    width: 100%;
+    padding-inline: 1.5rem;
+    padding-block: 2rem;
+    box-sizing: border-box;
+    
+    .table-content{
+        width: 100%;
+       min-height: 640px;
+        background: #FFFBFB;
+        border-radius: 20px;
+        padding-block: 1.5rem;
+        box-sizing: border-box;
+        
+
+        h2{
+            font-size: 28px;
+            font-weight: 500;
+            line-height: 37.8px;
+            color: #000000;
+            margin-left: 1.5rem;
+            
+        }
+
+        table{
+            border-collapse: collapse;
+            width: 95%;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+            th,td{
+                font-family: 'Satoshi', sans-serif;
+                font-size: 1.125rem;
+                line-height: 1.125rem;
+                font-weight: 400;
+                padding: 1rem;
+                text-align: left;
+                border-bottom: 1px solid #DDD;
+                box-sizing: border-box;
+            }
+        }
+    }
+}

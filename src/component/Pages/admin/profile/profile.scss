@@ -58,12 +58,9 @@
                     justify-content:space-between;
                     margin-left: 2rem;
                     width: 40%;
-                    .light-p{
-                        width: 49px;
-                    }
                     .bold-p{
                         font-weight: 500;
-                        width: 256px;
+                        width: 16rem;
                         margin-left: 2rem;
                         text-align:left;
                         margin-bottom: 0.5rem;
@@ -72,11 +69,11 @@
                 }
 
                 .view-btn{
-                    width: 206px;
-                    height: 49px;
+                    width: 12.875rem;
+                    height: 3.0625rem;
                     background: #3F7843;
                     color: #ffffff;
-                    border-radius: 10px;
+                    border-radius: 0.625rem;
                     margin-left: 2rem;
                     margin-top: 1rem;
                 }
