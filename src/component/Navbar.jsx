@@ -28,11 +28,16 @@ export const Navbar = () => {
   return (
     <>
       <div className="nav">
-        <Link to="/" className="logo">
-          HomeLander
-        </Link>
-        <div className="Hamburger" onClick={toggleMenu}>
-          <FontAwesomeIcon icon={toggle ? faTimes : faBars} size={"2x"} />
+        <div className="nav-main">
+          <div className="Hamburger" onClick={toggleMenu}>
+            <FontAwesomeIcon
+              icon={toggle ? faTimes : faBars}
+              style={{ height: "25px", width: "35px" }}
+            />
+          </div>
+          <Link to="/" className="logo">
+            HomeLander
+          </Link>
         </div>
         <nav className={toggle ? "nav-items" : "null"}>
           <ul>
