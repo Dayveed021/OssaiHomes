@@ -185,21 +185,34 @@ const LandingPage = () => {
           <div className="hero-opacity">
             <div className="hero-contents">
               <h1>Find a property in Nigeria</h1>
-              <input type="text" placeholder=" Search a Region" />
-              <div className="search-props">
-                <select name="" id="">
-                  <option value="">Min-price</option>
-                </select>
-                <select name="" id="">
-                  <option value="">Max-price</option>
-                </select>
-                <select name="" id="">
-                  <option value="">Bedroom</option>
-                </select>
-                <select name="" id="">
-                  <option value="">Type</option>
-                </select>
-                <button>Search</button>
+              <input type="text" placeholder="Search a Region" />
+              <div
+                className="search"
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  gap: "20px",
+                }}
+              >
+                <div className="search-props">
+                  <select name="" id="">
+                    <option value="">Min-price</option>
+                  </select>
+                  <select name="" id="">
+                    <option value="">Max-price</option>
+                  </select>
+                  <select name="" id="">
+                    <option value="">Bedroom</option>
+                  </select>
+                  <select name="" id="">
+                    <option value="">Type</option>
+                  </select>
+                  <button className="search-btn">Search</button>
+                </div>
+                <button className="search-btn-2">Search</button>
               </div>
             </div>
           </div>
@@ -341,7 +354,11 @@ const LandingPage = () => {
               </div>
             </div>
             <button
-              style={{ padding: "15px 40px 15px 40px", fontSize: "16px" }}
+              style={{
+                padding: "15px 40px 15px 40px",
+                fontSize: "16px",
+                marginBottom: "20px",
+              }}
             >
               View More
             </button>
@@ -370,9 +387,21 @@ const LandingPage = () => {
                   <div className="opt-con">
                     <img src={listing.image} alt={listing.title} />
                     <div className="opt-det">
-                      <h3>{listing.title}</h3>
-                      <p>{listing.description}</p>
-                      <p>{listing.address}</p>
+                      <h3>
+                        {listing.title.length > 21
+                          ? listing.title.slice(0, 21) + "..."
+                          : listing.title}
+                      </h3>
+                      <p>
+                        {listing.description.length > 58
+                          ? listing.description.slice(0, 58) + "..."
+                          : listing.description}
+                      </p>
+                      <p>
+                        {listing.address.length > 27
+                          ? listing.address.slice(0, 30) + "..."
+                          : listing.address}
+                      </p>
                       <div className="price">
                         <h2>
                           {listing.price} <span>/ month</span>
@@ -387,8 +416,9 @@ const LandingPage = () => {
               {Array.from(Array(totalPages)).map((_, i) => (
                 <FontAwesomeIcon
                   key={i}
-                  icon={i === currentPage ? faCircleDot : faCircle}
+                  icon={i === currentPage ? faCircle : faCircle}
                   style={{ height: "10px", width: "10px", margin: "0 5px" }}
+                  color={i === currentPage ? "black" : "gray"}
                 />
               ))}
             </div>
