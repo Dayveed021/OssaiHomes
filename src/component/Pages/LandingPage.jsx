@@ -11,8 +11,6 @@ import {
   faArrowLeft,
   faArrowRight,
   faCircle,
-  faCircleCheck,
-  faCircleDot,
 } from "@fortawesome/free-solid-svg-icons";
 // import opt from "./Pics/Rectangle 194.png";
 // import bath from "./icons/bath 1.png";
@@ -393,8 +391,8 @@ const LandingPage = () => {
                           : listing.title}
                       </h3>
                       <p>
-                        {listing.description.length > 58
-                          ? listing.description.slice(0, 58) + "..."
+                        {listing.description.length > 30
+                          ? listing.description.slice(0, 33) + "..."
                           : listing.description}
                       </p>
                       <p>
