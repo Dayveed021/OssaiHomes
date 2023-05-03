@@ -252,11 +252,20 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media screen and (max-width: 768px) {
+          flex-direction: column;
+          width: 100%;
+        }
         span {
           display: flex;
           justify-content: center;
           gap: 32px;
           align-items: center;
+          @media screen and (max-width: 768px) {
+            justify-content: space-between !important;
+            margin-bottom: -30px;
+            width: 80%;
+          }
           .arrow-con {
             width: 51px;
             height: 51px;
