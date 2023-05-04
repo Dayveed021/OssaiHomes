@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/MyList.css";
 import { PropertyData } from "../Data/Data_1";
 import { Navbar } from "../Navbar";
-import { Footer } from "../Footer";
+import { Footer } from "./Footer";
 
 function MyList() {
   return (

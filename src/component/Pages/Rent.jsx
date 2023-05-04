@@ -1,16 +1,15 @@
 import React from "react";
-import "../../styles/List.scss";
 import { Navbar } from "../Navbar";
 import { Footer } from "./Footer";
 
-const List = () => {
+const Rent = () => {
   return (
-    <div>
+    <>
       <Navbar />
-      <div className="listpage">List</div>
+      <div>Rent</div>;
       <Footer />
-    </div>
+    </>
   );
 };
 
-export default List;
+export default Rent;

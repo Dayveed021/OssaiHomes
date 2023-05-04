@@ -43,6 +43,14 @@ export const Navbar = () => {
           <ul>
             <li>
               <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "active" : "nav-list")}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
                 to="/buy"
                 className={({ isActive }) => (isActive ? "active" : "nav-list")}
               >
@@ -59,25 +67,39 @@ export const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/mylist"
+                to="/rent"
                 className={({ isActive }) => (isActive ? "active" : "nav-list")}
               >
-                MyList
+                Rent
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/signup"
+                className={({ isActive }) =>
+                  isActive ? "active" : "m-nav-list"
+                }
+              >
+                Sign Up
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/login"
+                className={({ isActive }) =>
+                  isActive ? "active" : "m-nav-list"
+                }
+              >
+                Log In
               </NavLink>
             </li>
           </ul>
           <ul>
-            <li>
-              <NavLink
-                to="/myagent"
-                className={({ isActive }) => (isActive ? "active" : "nav-list")}
-              >
-                MyAgent
-              </NavLink>
-            </li>
-
             <button className="btn" onClick={openPopup}>
-              Login
+              Log in
+            </button>
+            <button className="btn-2" onClick={openPopup}>
+              Sign Up
             </button>
           </ul>
         </nav>
