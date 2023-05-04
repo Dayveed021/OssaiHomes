@@ -1,12 +1,16 @@
-import React from 'react'
-import"../../styles/Search.scss"
+import React from "react";
+import "../../styles/Search.scss";
+import { Navbar } from "../Navbar";
+import { Footer } from "./Footer";
 
 const Search = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <>
+      <Navbar />
+      <div>Search</div>;
+      <Footer />
+    </>
+  );
+};
 
-export default Search
+export default Search;

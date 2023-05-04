@@ -8,8 +8,10 @@ import LandingPage from "./component/Pages/LandingPage";
 import { Buyy } from "./component/Pages/Buyy";
 import List from "./component/Pages/List";
 import MyList from "./component/Pages/MyList";
-import MyAgent from "./component/Pages/MyAgent";
 import AgentDetails from "./component/Pages/admin/agents/Agent-details";
+import Login from "./component/Pages/Login";
+import SignIn from "./component/Pages/SignUp";
+import Rent from "./component/Pages/Rent";
 
 const App = () => {
   return (
@@ -18,8 +20,10 @@ const App = () => {
         <Route path="/" index element={<LandingPage />} />
         <Route path="/buy" element={<Buyy />} />
         <Route path="/list" element={<List />} />
+        <Route path="/rent" element={<Rent />} />
         <Route path="/mylist" element={<MyList />} />
-        <Route path="/myagent" element={<MyAgent />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignIn />} />
         <Route path="/admin" element={<Dashboard />} />
         <Route path="/admin/profile" element={<Profile />} />
         <Route path="/admin/agents" element={<Agents />} />

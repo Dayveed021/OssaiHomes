@@ -5,18 +5,15 @@ import duplex from "./icons/duplex 1.png";
 import building from "./icons/icons8-buildings-64 1.png";
 import home from "./Pics/Image2.png";
 import { Navbar } from "../Navbar";
-import { Footer } from "../Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faAngleLeft,
+  faAngleRight,
   faArrowLeft,
   faArrowRight,
   faCircle,
 } from "@fortawesome/free-solid-svg-icons";
-// import opt from "./Pics/Rectangle 194.png";
-// import bath from "./icons/bath 1.png";
-// import bed from "./icons/double-bed 1.png";
-// import toilet from "./icons/water-closet 1.png";
-// import fav from "./icons/heart 1.png";
+import { Footer } from "./Footer";
 
 const popularListings = [
   {
@@ -355,7 +352,6 @@ const LandingPage = () => {
               style={{
                 padding: "15px 40px 15px 40px",
                 fontSize: "16px",
-                marginBottom: "20px",
               }}
             >
               View More
@@ -410,15 +406,23 @@ const LandingPage = () => {
                 </div>
               ))}
             </div>
-            <div className="nxt">
-              {Array.from(Array(totalPages)).map((_, i) => (
-                <FontAwesomeIcon
-                  key={i}
-                  icon={i === currentPage ? faCircle : faCircle}
-                  style={{ height: "10px", width: "10px", margin: "0 5px" }}
-                  color={i === currentPage ? "black" : "gray"}
-                />
-              ))}
+            <div className="mobilecntrl">
+              <div className="arrow-con-2" onClick={handlePrevPage}>
+                <FontAwesomeIcon icon={faAngleLeft} />
+              </div>
+              <div className="nxt">
+                {Array.from(Array(totalPages)).map((_, i) => (
+                  <FontAwesomeIcon
+                    key={i}
+                    icon={i === currentPage ? faCircle : faCircle}
+                    style={{ height: "10px", width: "10px", margin: "0 5px" }}
+                    color={i === currentPage ? "black" : "gray"}
+                  />
+                ))}
+              </div>
+              <div className="arrow-con-2" onClick={handleNextPage}>
+                <FontAwesomeIcon icon={faAngleRight} />
+              </div>
             </div>
           </div>
         </div>
