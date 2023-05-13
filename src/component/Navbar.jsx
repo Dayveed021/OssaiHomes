@@ -79,6 +79,7 @@ export const Navbar = () => {
                 className={({ isActive }) =>
                   isActive ? "active" : "m-nav-list"
                 }
+                onClick={openPopup}
               >
                 Sign Up
               </NavLink>
@@ -89,6 +90,7 @@ export const Navbar = () => {
                 className={({ isActive }) =>
                   isActive ? "active" : "m-nav-list"
                 }
+                onClick={openPopup}
               >
                 Log In
               </NavLink>

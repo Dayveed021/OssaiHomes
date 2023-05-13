@@ -12,6 +12,7 @@ import AgentDetails from "./component/Pages/admin/agents/Agent-details";
 import Login from "./component/Pages/Login";
 import SignIn from "./component/Pages/SignUp";
 import Rent from "./component/Pages/Rent";
+import UserLayout from "./component/Pages/DasboardPages/UserLayout";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/admin/agents/details" element={<AgentDetails />} />
         <Route path="/admin/transactions" element={<Transactions />} />
         <Route path="/admin/properties" element={<Properties />} />
+        <Route path="/dashboard" element={<UserLayout />} />
       </Routes>
     </div>
   );
