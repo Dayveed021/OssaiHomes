@@ -32,6 +32,12 @@ const App = () => {
         <Route path="/admin/transactions" element={<Transactions />} />
         <Route path="/admin/properties" element={<Properties />} />
         <Route path="/dashboard" element={<UserLayout />} />
+        <Route path="/dashboard/home" element={<UserLayout />} />
+        <Route path="/dashboard/my_listings" element={<UserLayout />} />
+        <Route path="/dashboard/subscription" element={<UserLayout />} />
+        <Route path="/dashboard/favourites" element={<UserLayout />} />
+        <Route path="/dashboard/profile" element={<UserLayout />} />
+        <Route path="/dashboard/help" element={<UserLayout />} />
       </Routes>
     </div>
   );
