@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import UserLayout from "./UserLayout";
+import house from "../Pics/user.webp";
 import "../../../styles/UserDashboard/user-home.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faUpload } from "@fortawesome/free-solid-svg-icons";
@@ -8,23 +9,28 @@ import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
 const pictures = [
   {
     id: 1,
-    image: "https://via.placeholder.com/300x200.png?text=Listing+Image",
+    image:
+      "https://netstorage-legit.akamaized.net/images/vllkyt5iogeq5uhe1.jpg",
   },
   {
     id: 2,
-    image: "https://via.placeholder.com/300x200.png?text=Listing+Image",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgNOUwovMtgkiSePd933X3-T0wPmIxcvkus7fZRkTzf2m3wS_df0Ti9b929xOdG0CPEjE&usqp=CAU",
   },
   {
     id: 3,
-    image: "https://via.placeholder.com/300x200.png?text=Listing+Image",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPiPsnRLX955IvEYIBE4l5Qsdi3UDmLKPVMapP15bEwBmidxH7cYOUDT4hwJ1nx5cJ2_U&usqp=CAU",
   },
   {
     id: 4,
-    image: "https://via.placeholder.com/300x200.png?text=Listing+Image",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFYIgdHuM5QVSW3Xp-jR3JDt1_SLJ6_FeDwgrlIVbblgwjntMRyC16aJTk6FPy_ugvrnU&usqp=CAU",
   },
   {
     id: 5,
-    image: "https://via.placeholder.com/300x200.png?text=Listing+Image",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUwAPo5W89exLPBlHU1g5WxOph7ga4GBKMVzU_jTTdEqKzIWeQeNgoJdHyQTAo-pGML7E&usqp=CAU",
   },
 ];
 
@@ -37,6 +43,12 @@ const UserDashboard = () => {
 };
 
 const Content = () => {
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleFileUpload = (event) => {
+    const file = event.target.files[0];
+    setSelectedFile(file);
+  };
   return (
     <div className="container">
       <main>
@@ -58,9 +70,27 @@ const Content = () => {
             </div>
           ))}
           <div className="upload">
-            {/* <FontAwesomeIcon icon={faCloudArrowUp} size="6x" /> */}
-            <FontAwesomeIcon icon={faUpload} size="6x" />
-            <span>Upload Photo</span>
+            <label htmlFor="upload-input">
+              {selectedFile ? (
+                <img
+                  src={URL.createObjectURL(selectedFile)}
+                  alt="Selected"
+                  className="uploaded-image"
+                />
+              ) : (
+                <div className="not-uploaded">
+                  <FontAwesomeIcon icon={faUpload} size="6x" cursor="pointer" />
+                  <span>Upload Photo</span>
+                </div>
+              )}
+            </label>
+            <input
+              id="upload-input"
+              type="file"
+              accept="image/*"
+              style={{ display: "none" }}
+              onChange={handleFileUpload}
+            />
           </div>
         </div>
         <div className="save-next">
