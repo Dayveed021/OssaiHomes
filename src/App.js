@@ -13,6 +13,7 @@ import Login from "./component/Pages/Login";
 import SignIn from "./component/Pages/SignUp";
 import Rent from "./component/Pages/Rent";
 import UserLayout from "./component/Pages/DasboardPages/UserLayout";
+import UserDashboard from "./component/Pages/DasboardPages/UserDashboard";
 
 const App = () => {
   return (
@@ -32,7 +33,7 @@ const App = () => {
         <Route path="/admin/transactions" element={<Transactions />} />
         <Route path="/admin/properties" element={<Properties />} />
         <Route path="/dashboard" element={<UserLayout />} />
-        <Route path="/dashboard/home" element={<UserLayout />} />
+        <Route path="/dashboard/home" element={<UserDashboard />} />
         <Route path="/dashboard/my_listings" element={<UserLayout />} />
         <Route path="/dashboard/subscription" element={<UserLayout />} />
         <Route path="/dashboard/favourites" element={<UserLayout />} />

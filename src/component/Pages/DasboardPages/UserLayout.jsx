@@ -14,7 +14,7 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { NavLink } from "react-router-dom";
 
-const UserLayout = () => {
+const UserLayout = ({ content }) => {
   return (
     <>
       <div className="user-layout">
@@ -102,9 +102,7 @@ const UserLayout = () => {
               </div>
             </div>
           </div>
-          <div className="left-main-contents">
-            <h1>Hello</h1>
-          </div>
+          <div className="left-main-contents">{content}</div>
         </div>
       </div>
     </>
