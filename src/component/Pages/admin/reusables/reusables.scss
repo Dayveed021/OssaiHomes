@@ -1,11 +1,11 @@
 .block{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 4fr);
     grid-template-rows: 1fr;
-    grid-column-gap: 2rem;
+    grid-column-gap: 3rem;
     grid-row-gap: 0;
     margin-inline: 2rem;
-    width: 90%;
+    width: 95%;
 
     .block1{
         width: 100%;
