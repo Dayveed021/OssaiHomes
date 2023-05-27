@@ -9,9 +9,10 @@
 
           //#1D1D1D
           .menu{
-            background: red;
+            background: #1D1D1D;
             position: static;
             min-height: 100vh;
+            width: 30%;
             
 
             .menu-content{
@@ -78,6 +79,7 @@
         }
 
         .content{
+            width: 100%;
             header{
                 height: 4.375rem;
                 background: #ffffff;
