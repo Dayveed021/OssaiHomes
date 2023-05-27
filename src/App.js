@@ -14,6 +14,7 @@ import SignIn from "./component/Pages/SignUp";
 import Rent from "./component/Pages/Rent";
 import UserLayout from "./component/Pages/DasboardPages/UserLayout";
 import UserDashboard from "./component/Pages/DasboardPages/UserDashboard";
+import AdminLayout from "./component/Pages/admin/home/AdminLayout";
 
 const App = () => {
   return (
@@ -26,7 +27,8 @@ const App = () => {
         <Route path="/mylist" element={<MyList />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignIn />} />
-        <Route path="/admin/*" element={<Dashboard />} />
+        <Route path="/admin/*" element={<AdminLayout />} />
+        <Route path="/admin/" element={<Dashboard />} />
         <Route path="/admin/profile" element={<Profile />} />
         <Route path="/admin/agents" element={<Agents />} />
         <Route path="/admin/agents/details" element={<AgentDetails />} />
