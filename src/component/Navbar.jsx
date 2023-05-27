@@ -67,10 +67,10 @@ export const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/rent"
+                to="/mylist"
                 className={({ isActive }) => (isActive ? "active" : "nav-list")}
               >
-                Rent
+                MyList
               </NavLink>
             </li>
             <li>
