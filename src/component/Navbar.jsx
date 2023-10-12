@@ -96,7 +96,7 @@ export const Navbar = () => {
               </NavLink>
             </li>
           </ul>
-          <ul>
+          <ul className="ul-btn">
             <button className="btn" onClick={openPopup}>
               Log in
             </button>
