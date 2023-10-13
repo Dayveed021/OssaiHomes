@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/MyList.scss";
 import { Navbar } from "../Navbar";
 import { Footer } from "./Footer";
 
 function MyList() {
+
+  const [isPopupVisible, setPopupVisible] = useState(false);
+
+  const togglePopup = () => {
+    setPopupVisible(!isPopupVisible);
+  };
   return (
     <>
       <Navbar />
@@ -16,9 +22,89 @@ function MyList() {
           <button className="btn-4" >Bedrooms <img src="/flaticons/expand-button3.png" alt="" /></button>
 
         </div>
-        <div className="mobile-advanced-filter">
+        <div onClick={togglePopup} className="mobile-advanced-filter">
           <p>Show Advanced Filters</p>
         </div>
+        {isPopupVisible &&  (<div className="advanced-search1">
+                      <h3>Advanced Search filter</h3>
+                      <form action="">
+                        <div className="location">
+                          <input type="text"  placeholder="Location"/>
+                        </div>
+
+                        <div className="category">
+                          <p>Category</p>
+                          <select id="category" name="category">
+                          <option></option>
+                          <option value="apartment">Apartment</option>
+                          <option value="duplex">Duplex</option>
+                        </select>       
+                        </div>
+
+                        <div className="price">
+                          <div className="min-price">
+                            <input type="text"  placeholder="Min Price"/>
+                            <select id="category" name="category">
+                            <option value=""></option>
+                            <option value="1000">1000</option>
+                            <option value="2000">2000</option>
+                            </select>   
+                          </div>
+                          <div className="min-price">
+                            <input type="text"  placeholder="Max Price"/>
+                            <select id="category" name="category">
+                              <option value=""></option>
+                            <option value="10000">10000</option>
+                            <option value="20000">20000</option>
+                            </select>   
+                          </div>
+                        </div>
+
+                        <div className="price">
+                          <div className="min-price">
+                            <input type="text"  placeholder="Type"/>
+                            <select id="category" name="category">
+                            <option value=""></option>
+                            <option value="apartment">apartment</option>
+                            <option value="duplex">duplex</option>
+                            </select>   
+                          </div>
+                          <div className="min-price">
+                            <input type="number"  placeholder="Furnish"/>
+                            <select id="category" name="category">
+                            <option value=""></option>
+                            <option value="fully">Fully</option>
+                            <option value="partially">Partially</option>
+                            </select>   
+                          </div>
+                        </div>
+                        <div className="price">
+                          <div className="min-price">
+                            <input type="text"  placeholder="Bedrooms"/>
+                            <select id="category" name="category">
+                            <option value=""></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            </select>   
+                          </div>
+                          <div className="min-price">
+                            <input type="text"  placeholder="Time listed"/>
+                            <select id="category" name="category">
+                            <option value=""></option>
+                            <option value="8">8am</option>
+                            <option value="9">9am</option>
+                            </select>   
+                          </div>
+                        </div>
+
+                        <div className="keywords">
+                          <input type="search" placeholder="keywords e.g pool,garage" />
+                        </div>
+
+
+                      </form>
+                </div>)}
 
         <h2> Showing Listings "Warri" in Nigeria</h2>
 
@@ -290,6 +376,8 @@ function MyList() {
 
                       </form>
                 </div>
+
+               
 
                 <div className="nearby">
                   <h3>Nearby cities</h3>
