@@ -16,6 +16,9 @@ function MyList() {
           <button className="btn-4" >Bedrooms <img src="/flaticons/expand-button3.png" alt="" /></button>
 
         </div>
+        <div className="mobile-advanced-filter">
+          <p>Show Advanced Filters</p>
+        </div>
 
         <h2> Showing Listings "Warri" in Nigeria</h2>
 
