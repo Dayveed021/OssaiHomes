@@ -15,11 +15,48 @@ function MyList() {
       <Navbar />
       <div className="search-listing">
         <div className="filter-search">
-          <input type="text"  placeholder="Location"/>
-          <button className="btn-1" >Price <img  src="/flaticons/expand-button3.png" alt="" /></button>
-          <button className="btn-2" >Category <img src="/flaticons/expand-button3.png" alt="" /></button>
-          <button className="btn-3" >Type  <img src="/flaticons/expand-button3.png" alt="" /></button>
-          <button className="btn-4" >Bedrooms <img src="/flaticons/expand-button3.png" alt="" /></button>
+          <form action="">
+            <div className="location">
+              <input type="search"  placeholder="Location"/>
+            </div>
+
+            <div className="category">
+              <label for="price">Price</label>
+              <select id="price" name="price">
+                <option value=""></option>
+                <option value="1000">1000</option>
+                <option value="2000">2000</option>
+                </select>   
+            </div>             
+            <div className="category">
+              <label for="price">Category</label>
+              <select id="category" name="category">
+                <option value=""></option>
+                <option value="rent">Rent</option>
+                <option value="buy">Buy</option>
+              </select>   
+            </div>  
+            <div className="category">
+              <label for="type">Type</label>
+              <select id="type" name="type">
+                <option value=""></option>
+                <option value="rent">Rent</option>
+                <option value="buy">buy</option>
+              </select>   
+            </div>   
+
+            <div className="category">
+              <label for="bedrooms">Bedrooms</label>
+              <select id="bedrooms" name="bedrooms">
+                <option value=""></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>   
+            </div>            
+                      
+
+          </form>
+          
 
         </div>
         <div onClick={togglePopup} className="mobile-advanced-filter">
@@ -29,7 +66,7 @@ function MyList() {
                       <h3>Advanced Search filter</h3>
                       <form action="">
                         <div className="location">
-                          <input type="text"  placeholder="Location"/>
+                          <input type="search"  placeholder="Location"/>
                         </div>
 
                         <div className="category">
@@ -116,7 +153,7 @@ function MyList() {
             </div>
             <div className="listing-details">
               <div className="img-left">
-                <img src="/pictures/Rectangle-244.png" alt="property-img" />
+                <img src="/Pictures/Rectangle-244.png" alt="property-img" />
               </div>
               <div className="details-right">
                 <h3>Ossai Agent</h3>
@@ -126,27 +163,27 @@ function MyList() {
                 <h4>Warri Delta State</h4>
                 <div className="price-call-btn">
                   <p> <span>90000000</span>/month</p>
-                  <button><img src="/pictures/telephone-call-1.png" alt="" /> <span>Call</span></button>
+                  <button><img src="/Pictures/telephone-call-1.png" alt="" /> <span>Call</span></button>
                 </div>
                 <div className="facilaties">
                   <div className="toilet">
-                    <img src="/pictures/water-closet-1.png" alt="" /> 1 guest toilet
+                    <img src="/Pictures/water-closet-1.png" alt="" /> 1 guest toilet
                   </div>
                   <div className="bedroom">
-                    <img src="/pictures/double-bed-1.png" alt="" /> 6 bedrooms
+                    <img src="/Pictures/double-bed-1.png" alt="" /> 6 bedrooms
                   </div>
                   <div className="bathroom">
-                    <img src="/pictures/bath-1.png" alt="" /> 6 bathrooms
+                    <img src="/Pictures/bath-1.png" alt="" /> 6 bathrooms
                   </div>
                   <div className="heart">
-                    <img src="/pictures/heart-3.png" alt="" />
+                    <img src="/Pictures/heart-3.png" alt="" />
                   </div>
                 </div>
               </div>
             </div>
             <div className="listing-details">
               <div className="img-left">
-                <img src="/pictures/Rectangle-242.png" alt="property-img" />
+                <img src="/Pictures/Rectangle-242.png" alt="property-img" />
               </div>
               <div className="details-right">
                 <h3>Ossai Agent</h3>
@@ -156,27 +193,27 @@ function MyList() {
                 <h4>Warri Delta State</h4>
                 <div className="price-call-btn">
                   <p> <span>90000000</span>/month</p>
-                  <button><img src="/pictures/telephone-call-1.png" alt="" /> <span>Call</span></button>
+                  <button><img src="/Pictures/telephone-call-1.png" alt="" /> <span>Call</span></button>
                 </div>
                 <div className="facilaties">
                   <div className="toilet">
-                    <img src="/pictures/water-closet-1.png" alt="" /> 1 guest toilet
+                    <img src="/Pictures/water-closet-1.png" alt="" /> 1 guest toilet
                   </div>
                   <div className="bedroom">
-                    <img src="/pictures/double-bed-1.png" alt="" /> 6 bedrooms
+                    <img src="/Pictures/double-bed-1.png" alt="" /> 6 bedrooms
                   </div>
                   <div className="bathroom">
-                    <img src="/pictures/bath-1.png" alt="" /> 6 bathrooms
+                    <img src="/Pictures/bath-1.png" alt="" /> 6 bathrooms
                   </div>
                   <div className="heart">
-                    <img src="/pictures/heart-3.png" alt="" />
+                    <img src="/Pictures/heart-3.png" alt="" />
                   </div>
                 </div>
               </div>
             </div>
             <div className="listing-details">
               <div className="img-left">
-                <img src="/pictures/Rectangle-243.png" alt="property-img" />
+                <img src="/Pictures/Rectangle-243.png" alt="property-img" />
               </div>
               <div className="details-right">
                 <h3>Ossai Agent</h3>
@@ -186,27 +223,27 @@ function MyList() {
                 <h4>Warri Delta State</h4>
                 <div className="price-call-btn">
                   <p> <span>90000000</span>/month</p>
-                  <button><img src="/pictures/telephone-call-1.png" alt="" /> <span>Call</span></button>
+                  <button><img src="/Pictures/telephone-call-1.png" alt="" /> <span>Call</span></button>
                 </div>
                 <div className="facilaties">
                   <div className="toilet">
-                    <img src="/pictures/water-closet-1.png" alt="" /> 1 guest toilet
+                    <img src="/Pictures/water-closet-1.png" alt="" /> 1 guest toilet
                   </div>
                   <div className="bedroom">
-                    <img src="/pictures/double-bed-1.png" alt="" /> 6 bedrooms
+                    <img src="/Pictures/double-bed-1.png" alt="" /> 6 bedrooms
                   </div>
                   <div className="bathroom">
-                    <img src="/pictures/bath-1.png" alt="" /> 6 bathrooms
+                    <img src="/Pictures/bath-1.png" alt="" /> 6 bathrooms
                   </div>
                   <div className="heart">
-                    <img src="/pictures/heart-3.png" alt="" />
+                    <img src="/Pictures/heart-3.png" alt="" />
                   </div>
                 </div>
               </div>
             </div>
             <div className="listing-details">
               <div className="img-left">
-                <img src="/pictures/Rectangle-247.png" alt="property-img" />
+                <img src="/Pictures/Rectangle-247.png" alt="property-img" />
               </div>
               <div className="details-right">
                 <h3>Ossai Agent</h3>
@@ -216,27 +253,27 @@ function MyList() {
                 <h4>Warri Delta State</h4>
                 <div className="price-call-btn">
                   <p> <span>90000000</span>/month</p>
-                  <button><img src="/pictures/telephone-call-1.png" alt="" /> <span>Call</span></button>
+                  <button><img src="/Pictures/telephone-call-1.png" alt="" /> <span>Call</span></button>
                 </div>
                 <div className="facilaties">
                   <div className="toilet">
-                    <img src="/pictures/water-closet-1.png" alt="" /> 1 guest toilet
+                    <img src="/Pictures/water-closet-1.png" alt="" /> 1 guest toilet
                   </div>
                   <div className="bedroom">
-                    <img src="/pictures/double-bed-1.png" alt="" /> 6 bedrooms
+                    <img src="/Pictures/double-bed-1.png" alt="" /> 6 bedrooms
                   </div>
                   <div className="bathroom">
-                    <img src="/pictures/bath-1.png" alt="" /> 6 bathrooms
+                    <img src="/Pictures/bath-1.png" alt="" /> 6 bathrooms
                   </div>
                   <div className="heart">
-                    <img src="/pictures/heart-3.png" alt="" />
+                    <img src="/Pictures/heart-3.png" alt="" />
                   </div>
                 </div>
               </div>
             </div>
             <div className="listing-details">
               <div className="img-left">
-                <img src="/pictures/Rectangle-246.png" alt="property-img" />
+                <img src="/Pictures/Rectangle-246.png" alt="property-img" />
               </div>
               <div className="details-right">
                 <h3>Ossai Agent</h3>
@@ -246,27 +283,27 @@ function MyList() {
                 <h4>Warri Delta State</h4>
                 <div className="price-call-btn">
                   <p> <span>90000000</span>/month</p>
-                  <button><img src="/pictures/telephone-call-1.png" alt="" /> <span>Call</span></button>
+                  <button><img src="/Pictures/telephone-call-1.png" alt="" /> <span>Call</span></button>
                 </div>
                 <div className="facilaties">
                   <div className="toilet">
-                    <img src="/pictures/water-closet-1.png" alt="" /> 1 guest toilet
+                    <img src="/Pictures/water-closet-1.png" alt="" /> 1 guest toilet
                   </div>
                   <div className="bedroom">
-                    <img src="/pictures/double-bed-1.png" alt="" /> 6 bedrooms
+                    <img src="/Pictures/double-bed-1.png" alt="" /> 6 bedrooms
                   </div>
                   <div className="bathroom">
-                    <img src="/pictures/bath-1.png" alt="" /> 6 bathrooms
+                    <img src="/Pictures/bath-1.png" alt="" /> 6 bathrooms
                   </div>
                   <div className="heart">
-                    <img src="/pictures/heart-3.png" alt="" />
+                    <img src="/Pictures/heart-3.png" alt="" />
                   </div>
                 </div>
               </div>
             </div>
             <div className="listing-details">
               <div className="img-left">
-                <img src="/pictures/Rectangle-245.png" alt="property-img" />
+                <img src="/Pictures/Rectangle-245.png" alt="property-img" />
               </div>
               <div className="details-right">
                 <h3>Ossai Agent</h3>
@@ -276,20 +313,20 @@ function MyList() {
                 <h4>Warri Delta State</h4>
                 <div className="price-call-btn">
                   <p> <span>90000000</span>/month</p>
-                  <button><img src="/pictures/telephone-call-1.png" alt="" /> <span>Call</span></button>
+                  <button><img src="/Pictures/telephone-call-1.png" alt="" /> <span>Call</span></button>
                 </div>
                 <div className="facilaties">
                   <div className="toilet">
-                    <img src="/pictures/water-closet-1.png" alt="" /> 1 guest toilet
+                    <img src="/Pictures/water-closet-1.png" alt="" /> 1 guest toilet
                   </div>
                   <div className="bedroom">
-                    <img src="/pictures/double-bed-1.png" alt="" /> 6 bedrooms
+                    <img src="/Pictures/double-bed-1.png" alt="" /> 6 bedrooms
                   </div>
                   <div className="bathroom">
-                    <img src="/pictures/bath-1.png" alt="" /> 6 bathrooms
+                    <img src="/Pictures/bath-1.png" alt="" /> 6 bathrooms
                   </div>
                   <div className="heart">
-                    <img src="/pictures/heart-3.png" alt="" />
+                    <img src="/Pictures/heart-3.png" alt="" />
                   </div>
                 </div>
               </div>
