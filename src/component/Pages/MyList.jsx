@@ -70,7 +70,7 @@ function MyList() {
                         </div>
 
                         <div className="category">
-                          <p>Category</p>
+                          <label for="category">Category</label>
                           <select id="category" name="category">
                           <option></option>
                           <option value="apartment">Apartment</option>
@@ -80,16 +80,16 @@ function MyList() {
 
                         <div className="price">
                           <div className="min-price">
-                            <input type="text"  placeholder="Min Price"/>
-                            <select id="category" name="category">
+                          <label for="min-price">Min Price</label>
+                            <select id="min-price" name="min-price">
                             <option value=""></option>
                             <option value="1000">1000</option>
                             <option value="2000">2000</option>
                             </select>   
                           </div>
                           <div className="min-price">
-                            <input type="text"  placeholder="Max Price"/>
-                            <select id="category" name="category">
+                          <label for="max-price">Max price</label>
+                            <select id="max-price" name="max-price">
                               <option value=""></option>
                             <option value="10000">10000</option>
                             <option value="20000">20000</option>
@@ -99,16 +99,16 @@ function MyList() {
 
                         <div className="price">
                           <div className="min-price">
-                            <input type="text"  placeholder="Type"/>
-                            <select id="category" name="category">
+                          <label for="type">Type</label>
+                            <select id="type" name="type">
                             <option value=""></option>
                             <option value="apartment">apartment</option>
                             <option value="duplex">duplex</option>
                             </select>   
                           </div>
                           <div className="min-price">
-                            <input type="number"  placeholder="Furnish"/>
-                            <select id="category" name="category">
+                          <label for="furnish">Furnish</label>
+                            <select id="furnish" name="furnish">
                             <option value=""></option>
                             <option value="fully">Fully</option>
                             <option value="partially">Partially</option>
@@ -117,8 +117,8 @@ function MyList() {
                         </div>
                         <div className="price">
                           <div className="min-price">
-                            <input type="text"  placeholder="Bedrooms"/>
-                            <select id="category" name="category">
+                            <label for="bedrooms">Bedroom</label>
+                            <select id="bedrooms" name="bedrooms">
                             <option value=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -126,8 +126,8 @@ function MyList() {
                             </select>   
                           </div>
                           <div className="min-price">
-                            <input type="text"  placeholder="Time listed"/>
-                            <select id="category" name="category">
+                            <label for="time-listed">Time Listed</label>
+                            <select id="time-listed" name="time-listed">
                             <option value=""></option>
                             <option value="8">8am</option>
                             <option value="9">9am</option>
@@ -341,7 +341,7 @@ function MyList() {
                         </div>
 
                         <div className="category">
-                          <p>Category</p>
+                        <label for="category">category</label>
                           <select id="category" name="category">
                           <option></option>
                           <option value="apartment">Apartment</option>
@@ -351,16 +351,16 @@ function MyList() {
 
                         <div className="price">
                           <div className="min-price">
-                            <input type="text"  placeholder="Min Price"/>
-                            <select id="category" name="category">
+                            <label for="min-price">Min Price</label>
+                            <select id="min-price" name="min-price">
                             <option value=""></option>
                             <option value="1000">1000</option>
                             <option value="2000">2000</option>
                             </select>   
                           </div>
                           <div className="min-price">
-                            <input type="text"  placeholder="Max Price"/>
-                            <select id="category" name="category">
+                            <label for="max-price">Max Price</label>
+                            <select id="max-price" name="max-price">
                               <option value=""></option>
                             <option value="10000">10000</option>
                             <option value="20000">20000</option>
@@ -370,16 +370,16 @@ function MyList() {
 
                         <div className="price">
                           <div className="min-price">
-                            <input type="text"  placeholder="Type"/>
-                            <select id="category" name="category">
+                            <label for="type">Type</label>
+                            <select id="type" name="type">
                             <option value=""></option>
                             <option value="apartment">apartment</option>
                             <option value="duplex">duplex</option>
                             </select>   
                           </div>
                           <div className="min-price">
-                            <input type="number"  placeholder="Furnish"/>
-                            <select id="category" name="category">
+                            <label for="furnish">Furnish</label>
+                            <select id="furnish" name="furnish">
                             <option value=""></option>
                             <option value="fully">Fully</option>
                             <option value="partially">Partially</option>
@@ -388,8 +388,8 @@ function MyList() {
                         </div>
                         <div className="price">
                           <div className="min-price">
-                            <input type="text"  placeholder="Bedrooms"/>
-                            <select id="category" name="category">
+                          <label for="bedrooms">Bedroom</label>
+                            <select id="bedrooms" name="bedrooms">
                             <option value=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -397,8 +397,8 @@ function MyList() {
                             </select>   
                           </div>
                           <div className="min-price">
-                            <input type="text"  placeholder="Time listed"/>
-                            <select id="category" name="category">
+                            <label for="time-listed">Time Listed</label>
+                            <select id="time-listed" name="time-listed">
                             <option value=""></option>
                             <option value="8">8am</option>
                             <option value="9">9am</option>
