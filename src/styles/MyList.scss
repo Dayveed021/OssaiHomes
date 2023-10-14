@@ -92,6 +92,7 @@
           color: rgba(0, 0, 0, 0.50);
           font-size: 18px;
           font-weight: 400;
+          background: transparent;
         }
       }
 
@@ -106,6 +107,7 @@
 
         select{
           border: none;
+          background: transparent;
         }
       }
       .price{
@@ -123,9 +125,11 @@
           input{
             border: none;
             width: 50%;
+            background: transparent;
           }
           select{
             border: none;
+            background: transparent;
           }
         }
       }
@@ -142,6 +146,7 @@
           color: rgba(0, 0, 0, 0.50);
           font-size: 18px;
           font-weight: 400;
+          background: transparent;
         }
       }
     }
@@ -420,6 +425,7 @@
               color: rgba(0, 0, 0, 0.50);
               font-size: 18px;
               font-weight: 400;
+              background: transparent;
             }
           }
 
@@ -434,6 +440,7 @@
 
             select{
               border: none;
+              background: transparent;
             }
           }
           .price{
@@ -451,9 +458,11 @@
               input{
                 border: none;
                 width: 50%;
+                background: transparent;
               }
               select{
                 border: none;
+                background: transparent;
               }
             }
           }
@@ -470,6 +479,7 @@
               color: rgba(0, 0, 0, 0.50);
               font-size: 18px;
               font-weight: 400;
+              background: transparent;
             }
           }
         }
