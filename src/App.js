@@ -14,6 +14,7 @@ import SignIn from "./component/Pages/SignUp";
 import Rent from "./component/Pages/Rent";
 import UserLayout from "./component/Pages/DasboardPages/UserLayout";
 import UserDashboard from "./component/Pages/DasboardPages/UserDashboard";
+import SingleProperty from "./component/Pages/SingleProperty";
 import AdminLayout from "./component/Pages/admin/home/AdminLayout";
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
       <Routes>
         <Route path="/" index element={<LandingPage />} />
         <Route path="/buy" element={<Buyy />} />
+        <Route path="/property" element={<SingleProperty />} />
         <Route path="/list" element={<List />} />
         <Route path="/rent" element={<Rent />} />
         <Route path="/mylist" element={<MyList />} />

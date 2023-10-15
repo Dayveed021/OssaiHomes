@@ -1,0 +1,74 @@
+.single-property{
+    width: 100%;
+    min-height: 80vh;
+    background: #FAFAFA;
+    font-family: 'Satoshi';
+
+    .filter-search{
+        width: 100%;
+        height: 60px;
+        padding-right:159px;
+        padding-block: 8px;
+        padding-left: 9.5rem;
+        background: #E4E4E4;
+        box-sizing: border-box;
+        @media screen and (max-width: 769px) {
+          display: none;
+        }
+        
+    
+        form{
+          display: flex;
+          width: 100%;
+    
+          .location{
+            width: 30%;
+            border: 0.5px solid #000000;
+            border-radius: 5px;
+            background: #FFFFFF;
+            padding: 10px;
+            input{
+              width: 100%;
+              background: transparent;              
+              outline: none;
+              border: none;
+            }
+          }
+    
+          .category{
+            background: #FFFFFF;
+            border-radius: 5px;
+            padding: 10px;
+            border: 0.5px solid #000000;
+            margin-left: 20px;
+    
+            select{
+              border: none;
+              background: transparent;
+              outline: none;
+            }
+    
+          }
+          
+        }
+      }
+
+      .property-agent{
+        width: 80%;
+        display: flex;
+        margin-inline: 9.5rem;
+        gap: 20px;
+
+        .property{
+            width: 68%;
+            background-color: red;
+          }
+    
+          .agent-filter{
+            width: 32%;
+            background-color: blue;
+          }
+      }
+
+      
+}
