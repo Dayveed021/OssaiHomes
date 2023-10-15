@@ -27,7 +27,7 @@ const UserLayout = ({ content }) => {
             <div className="content-pages">
               <div className="content-page">
                 <NavLink
-                  to="/dashboard/home"
+                  to="/dashboard/"
                   className={({ isActive }) => (isActive ? "is-active" : "not")}
                 >
                   <img src={home} alt="" />

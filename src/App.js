@@ -15,6 +15,7 @@ import Rent from "./component/Pages/Rent";
 import UserLayout from "./component/Pages/DasboardPages/UserLayout";
 import UserDashboard from "./component/Pages/DasboardPages/UserDashboard";
 import SingleProperty from "./component/Pages/SingleProperty";
+import AdminLayout from "./component/Pages/admin/home/AdminLayout";
 
 const App = () => {
   return (
@@ -28,14 +29,15 @@ const App = () => {
         <Route path="/mylist" element={<MyList />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignIn />} />
-        <Route path="/admin" element={<Dashboard />} />
+        <Route path="/admin/*" element={<AdminLayout />} />
+        <Route path="/admin/" element={<Dashboard />} />
         <Route path="/admin/profile" element={<Profile />} />
         <Route path="/admin/agents" element={<Agents />} />
         <Route path="/admin/agents/details" element={<AgentDetails />} />
         <Route path="/admin/transactions" element={<Transactions />} />
         <Route path="/admin/properties" element={<Properties />} />
-        <Route path="/dashboard" element={<UserLayout />} />
-        <Route path="/dashboard/home" element={<UserDashboard />} />
+        <Route path="/dashboard/*" element={<UserLayout />} />
+        <Route path="/dashboard/" element={<UserDashboard />} />
         <Route path="/dashboard/my_listings" element={<UserLayout />} />
         <Route path="/dashboard/subscription" element={<UserLayout />} />
         <Route path="/dashboard/favourites" element={<UserLayout />} />
