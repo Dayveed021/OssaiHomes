@@ -60,13 +60,70 @@
         gap: 20px;
 
         .property{
+            margin-top: 20px;
             width: 68%;
-            background-color: red;
+            .carousel{
+                width: 100%;
+                position: relative;
+
+                .next{
+                    position: absolute;
+                    top: 220px;
+                    left: 760px;
+                }
+
+                .prev{
+                    position: absolute;
+                    top: 220px;
+                    left: 15px;
+                }
+
+                .slide{
+                    width: 100%;
+                    img{
+                        width: 100%;
+                        height: 440px;
+                        border-radius: 5px;
+
+                    }
+                }
+            }
+
+            .gallery{
+                width: 100%;
+                position: relative;
+                margin-block: 10px;
+                .slides-container{
+                    display: flex;
+                    width: 100%;
+                    gap: 10px;
+
+                    .slide{
+                        width: 20%;
+                        height: 112px;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+
+                .prev-btn{
+                    position: absolute;
+                    top: 50px;
+                    left: 5px;
+                }
+
+                .next-btn{
+                    position: absolute;
+                    top: 50px;
+                    left: 790px;
+                }
+            }
           }
     
           .agent-filter{
             width: 32%;
-            background-color: blue;
           }
       }
 
