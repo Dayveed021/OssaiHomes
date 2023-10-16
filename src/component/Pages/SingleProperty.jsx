@@ -265,7 +265,111 @@ const SingleProperty = () => {
                     </div>
                 </div>
                 <div className="agent-filter">
-                    you say
+                    <div className="agent-contact">
+                        <h3>Contact Agent</h3>
+                        <div className="phone">
+                            <img src="/flaticons/telephone-call.png" alt="" />
+                            <p>08131877486</p>
+                        </div>
+                        <div className="phone">
+                            <img src="/flaticons/whatsapp.png" alt="" />
+                            <p>0813187486</p>
+                        </div>
+                        <div className="phone">
+                            <img src="/flaticons/mail.png" alt="" />
+                            <p>exampl@gmail.com</p>
+                        </div>
+                        <div className="share-favourite">
+                            <div className="share">
+                                <img src="/flaticons/share.png" alt="" />
+                                <p>Share</p>
+                            </div>
+                            <div className="share">
+                                <img src="/flaticons/favourite.png" alt="" />
+                                <p>Favourite</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="advanced-search">
+                      <h3>Advanced Search filter</h3>
+                      <form action="">
+                        <div className="location">
+                          <input type="text"  placeholder="Location"/>
+                        </div>
+
+                        <div className="category">
+                        <label for="category">category</label>
+                          <select id="category" name="category">
+                          <option></option>
+                          <option value="apartment">Apartment</option>
+                          <option value="duplex">Duplex</option>
+                        </select>       
+                        </div>
+
+                        <div className="price">
+                          <div className="min-price">
+                            <label for="min-price">Min Price</label>
+                            <select id="min-price" name="min-price">
+                            <option value=""></option>
+                            <option value="1000">1000</option>
+                            <option value="2000">2000</option>
+                            </select>   
+                          </div>
+                          <div className="min-price">
+                            <label for="max-price">Max Price</label>
+                            <select id="max-price" name="max-price">
+                              <option value=""></option>
+                            <option value="10000">10000</option>
+                            <option value="20000">20000</option>
+                            </select>   
+                          </div>
+                        </div>
+
+                        <div className="price">
+                          <div className="min-price">
+                            <label for="type">Type</label>
+                            <select id="type" name="type">
+                            <option value=""></option>
+                            <option value="apartment">apartment</option>
+                            <option value="duplex">duplex</option>
+                            </select>   
+                          </div>
+                          <div className="min-price">
+                            <label for="furnish">Furnish</label>
+                            <select id="furnish" name="furnish">
+                            <option value=""></option>
+                            <option value="fully">Fully</option>
+                            <option value="partially">Partially</option>
+                            </select>   
+                          </div>
+                        </div>
+                        <div className="price">
+                          <div className="min-price">
+                          <label for="bedrooms">Bedroom</label>
+                            <select id="bedrooms" name="bedrooms">
+                            <option value=""></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            </select>   
+                          </div>
+                          <div className="min-price">
+                            <label for="time-listed">Time Listed</label>
+                            <select id="time-listed" name="time-listed">
+                            <option value=""></option>
+                            <option value="8">8am</option>
+                            <option value="9">9am</option>
+                            </select>   
+                          </div>
+                        </div>
+
+                        <div className="keywords">
+                          <input type="search" placeholder="keywords e.g pool,garage" />
+                        </div>
+
+
+                      </form>
+                </div>
                 </div>
         </div>
             </div>
