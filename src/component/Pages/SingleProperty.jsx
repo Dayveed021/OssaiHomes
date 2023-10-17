@@ -13,7 +13,14 @@ const SingleProperty = () => {
         "/Pictures/Rectangle-245.png",
         "/Pictures/Rectangle-246.png",
         "/Pictures/Rectangle-247.png"
-    ]
+    ];
+
+    const [isPopupVisible, setPopupVisible] = useState(false);
+    const togglePopup = () => {
+        setPopupVisible(!isPopupVisible);
+      };
+
+
   return (
     <div>
         <Navbar />
@@ -63,6 +70,89 @@ const SingleProperty = () => {
             
 
             </div>
+            <div onClick={togglePopup} className="mobile-advanced-filter">
+          <p>Show Advanced Filters</p>
+            </div>
+        {isPopupVisible &&  (<div className="advanced-search1">
+                      <h3>Advanced Search filter</h3>
+                      <form action="">
+                        <div className="location">
+                          <input type="search"  placeholder="Location"/>
+                        </div>
+
+                        <div className="category">
+                          <label for="category">Category</label>
+                          <select id="category" name="category">
+                          <option></option>
+                          <option value="apartment">Apartment</option>
+                          <option value="duplex">Duplex</option>
+                        </select>       
+                        </div>
+
+                        <div className="price">
+                          <div className="min-price">
+                          <label for="min-price">Min Price</label>
+                            <select id="min-price" name="min-price">
+                            <option value=""></option>
+                            <option value="1000">1000</option>
+                            <option value="2000">2000</option>
+                            </select>   
+                          </div>
+                          <div className="min-price">
+                          <label for="max-price">Max price</label>
+                            <select id="max-price" name="max-price">
+                              <option value=""></option>
+                            <option value="10000">10000</option>
+                            <option value="20000">20000</option>
+                            </select>   
+                          </div>
+                        </div>
+
+                        <div className="price">
+                          <div className="min-price">
+                          <label for="type">Type</label>
+                            <select id="type" name="type">
+                            <option value=""></option>
+                            <option value="apartment">apartment</option>
+                            <option value="duplex">duplex</option>
+                            </select>   
+                          </div>
+                          <div className="min-price">
+                          <label for="furnish">Furnish</label>
+                            <select id="furnish" name="furnish">
+                            <option value=""></option>
+                            <option value="fully">Fully</option>
+                            <option value="partially">Partially</option>
+                            </select>   
+                          </div>
+                        </div>
+                        <div className="price">
+                          <div className="min-price">
+                            <label for="bedrooms">Bedroom</label>
+                            <select id="bedrooms" name="bedrooms">
+                            <option value=""></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            </select>   
+                          </div>
+                          <div className="min-price">
+                            <label for="time-listed">Time Listed</label>
+                            <select id="time-listed" name="time-listed">
+                            <option value=""></option>
+                            <option value="8">8am</option>
+                            <option value="9">9am</option>
+                            </select>   
+                          </div>
+                        </div>
+
+                        <div className="keywords">
+                          <input type="search" placeholder="keywords e.g pool,garage" />
+                        </div>
+
+
+                      </form>
+                </div>)}
             <div className="property-agent">
                 <div className="property">
                     <Carousel items={items} />
