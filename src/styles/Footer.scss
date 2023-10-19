@@ -24,6 +24,9 @@
       margin-top: 0px;
       align-items: center;
     }
+    @media screen and (max-width: 1180px) {
+      padding-left: 5rem;
+    }
 
     h1 {
       .foot-header {
