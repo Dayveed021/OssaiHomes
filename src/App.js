@@ -10,12 +10,13 @@ import List from "./component/Pages/List";
 import MyList from "./component/Pages/MyList";
 import AgentDetails from "./component/Pages/admin/agents/Agent-details";
 import Login from "./component/Pages/Login";
-import SignIn from "./component/Pages/SignUp";
+import SignUp from "./component/Pages/SignUp";
 import Rent from "./component/Pages/Rent";
 import UserLayout from "./component/Pages/DasboardPages/UserLayout";
 import UserDashboard from "./component/Pages/DasboardPages/UserDashboard";
 import SingleProperty from "./component/Pages/SingleProperty";
 import AdminLayout from "./component/Pages/admin/home/AdminLayout";
+import MyListings from "./component/Pages/DasboardPages/MyListings";
 
 const App = () => {
   return (
@@ -28,7 +29,7 @@ const App = () => {
         <Route path="/rent" element={<Rent />} />
         <Route path="/mylist" element={<MyList />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/admin/*" element={<AdminLayout />} />
         <Route path="/admin/" element={<Dashboard />} />
         <Route path="/admin/profile" element={<Profile />} />
@@ -38,7 +39,7 @@ const App = () => {
         <Route path="/admin/properties" element={<Properties />} />
         <Route path="/dashboard/*" element={<UserLayout />} />
         <Route path="/dashboard/" element={<UserDashboard />} />
-        <Route path="/dashboard/my_listings" element={<UserLayout />} />
+        <Route path="/dashboard/my_listings" element={<MyListings />} />
         <Route path="/dashboard/subscription" element={<UserLayout />} />
         <Route path="/dashboard/favourites" element={<UserLayout />} />
         <Route path="/dashboard/profile" element={<UserLayout />} />

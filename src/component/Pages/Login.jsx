@@ -2,6 +2,7 @@ import React from "react";
 import { Navbar } from "../Navbar";
 import facebook from "../Pages/SVG/facebook.svg";
 import google from "../Pages/SVG/google.svg";
+import { NavLink } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -19,7 +20,9 @@ const Login = () => {
               <div class="login-register">
                 <p>
                   Or
-                  <span class="register-link">Create</span>
+                  <NavLink to="/signup" class="register-link">
+                    Create
+                  </NavLink>
                   account
                 </p>
               </div>

@@ -3,6 +3,7 @@ import { Navbar } from "../Navbar";
 import { Footer } from "./Footer";
 import facebook from "../Pages/SVG/facebook.svg";
 import google from "../Pages/SVG/google.svg";
+import { NavLink } from "react-router-dom";
 
 const SignUp = () => {
   return (
@@ -20,7 +21,9 @@ const SignUp = () => {
               <div className="register-login">
                 <p>
                   Or
-                  <span className="login-link">Login</span>
+                  <NavLink to="/login" className="login-link">
+                    Login
+                  </NavLink>
                   to your account
                 </p>
               </div>

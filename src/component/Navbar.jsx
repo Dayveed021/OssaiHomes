@@ -82,11 +82,8 @@ export const Navbar = () => {
             </li>
           </ul>
           <ul className="ul-btn">
-            <NavLink to="/login">
-              <button className="btn">Log in</button>
-            </NavLink>
             <NavLink to="/signup">
-              <button className="btn-2">Sign Up</button>
+              <button className="btn-2">Try for free</button>
             </NavLink>
           </ul>
         </nav>
