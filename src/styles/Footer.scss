@@ -1,0 +1,90 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: 0px;
+}
+
+.footer {
+  width: 100%;
+  height: 232px;
+  background-color: rgba(204, 204, 204, 1);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Tisa Sans Pro", sans-serif;
+
+  .foot-logo {
+    margin-top: -125px;
+    padding-left: 157px;
+    display: flex;
+    gap: 14px;
+    flex-direction: column;
+    @media screen and (max-width: 768px) {
+      padding-left: 0px;
+      margin-top: 0px;
+      align-items: center;
+    }
+    @media screen and (max-width: 1180px) {
+      padding-left: 5rem;
+    }
+
+    h1 {
+      .foot-header {
+        text-decoration: none;
+        color: #3f7843;
+      }
+    }
+
+    .social {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      span {
+        height: 24px;
+        width: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: black;
+        color: white;
+      }
+    }
+  }
+
+  .footer-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    .footer-con {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      gap: 5px;
+      @media screen and (max-width: 768px) {
+        text-align: center;
+      }
+
+      ul {
+        li {
+          list-style: none;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+        @media screen and (max-width: 768px) {
+          font-size: 12px;
+          width: 100%;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+}

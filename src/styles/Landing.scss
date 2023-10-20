@@ -1,0 +1,401 @@
+@import "./helper";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: 0px;
+}
+
+.landing_page {
+  font-family: "Satoshi", sans-serif;
+  .hero-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../../public/Pictures/LandingImg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 510px;
+    font-family: "Tisa Sans Pro", sans-serif;
+
+    .hero-opacity {
+      background: rgba(33, 33, 33, 0.3);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .hero-contents {
+        padding: 0px 20px 0px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 16px;
+        width: 70%;
+        @media screen and (max-width: 769px) {
+          width: 95%;
+        }
+      }
+      h1 {
+        color: white;
+        font-weight: 800;
+        font-size: 55px;
+        @media screen and (max-width: 768px) {
+          font-size: 40px;
+        }
+        @media screen and (max-width: 430px) {
+          font-size: 25px;
+        }
+      }
+      input {
+        width: 99%;
+        height: 64px;
+        border-radius: 5px;
+        border: none;
+        font-size: 22px;
+        outline: none;
+        padding: 0px 0px 0px 10px;
+        @media screen and (max-width: 768px) {
+          width: 97%;
+        }
+      }
+      .search-props {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 10px;
+        @media screen and (max-width: 964px) {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+          gap: 16px;
+        }
+        select {
+          border-radius: 5px;
+          padding: 10px 15px 10px 15px;
+          width: 20%;
+          font-weight: 500;
+          @media screen and (max-width: 769px) {
+            width: 100%;
+          }
+        }
+        @media screen and (max-width: 769px) {
+          justify-content: center !important;
+        }
+        .search-btn {
+          padding: 10px 30px 10px 30px;
+          border-radius: 10px;
+          @media screen and (max-width: 769px) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .search-btn-2 {
+    display: none;
+    @media screen and (max-width: 769px) {
+      display: block;
+      padding: 10px 30px 10px 30px;
+      background: none;
+      border: 3px solid green;
+      font-weight: 600;
+      font-size: 20px;
+      border-radius: 10px;
+    }
+  }
+  .services {
+    .service-con {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 43px;
+      padding: 30px 0px 30px 0px;
+      h1 {
+        color: #3f7843;
+        font-weight: 700;
+      }
+      .service-cards {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .card {
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          margin-bottom: 20px;
+          @media screen and (max-width: 769px) {
+            flex-direction: column;
+            gap: 50px;
+          }
+          .card-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px 30px 20px 30px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            width: 20%;
+            gap: 18px;
+            @media screen and (max-width: 768px) {
+              width: 70%;
+              padding: 10px;
+            }
+            h2 {
+              color: #3f7843;
+              font-family: "Tisa Sans Pro", sans-serif;
+              font-weight: 800;
+            }
+            p {
+              text-align: center;
+              font-weight: 400;
+              line-height: 27px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .featured {
+    padding: 20px 0px 20px 0px;
+    .featured-con {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      background-color: black;
+      gap: 30px;
+      padding: 30px 0px 30px 0px;
+      h1 {
+        color: white;
+        font-weight: 700;
+      }
+      .listings {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        .list-con {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 36px;
+          @media screen and (max-width: 769px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 90%;
+          }
+          @media screen and (max-width: 475px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            grid-template-columns: none;
+            width: 100%;
+          }
+        }
+        .list-card {
+          background: #ffff;
+          border-radius: 10px;
+          transition: all 0.3s ease-out;
+          cursor: pointer;
+          @media screen and (max-width: 475px) {
+            width: 90%;
+          }
+          img {
+            width: 100%;
+          }
+          .list-desc {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: 10px 25px 10px 25px;
+            gap: 5px;
+            ul {
+              list-style: none;
+            }
+            .price {
+              h2 {
+                color: #3f7843;
+                span {
+                  font-size: 14px;
+                  font-weight: 400;
+                  color: black;
+                }
+              }
+            }
+          }
+          &:hover {
+            scale: 1.05;
+          }
+        }
+      }
+    }
+  }
+  .popular {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    .popular-con {
+      margin-top: 48px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 48px;
+      @media screen and (max-width: 475px) {
+        width: 95%;
+      }
+      .p-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media screen and (max-width: 768px) {
+          flex-direction: column;
+          width: 100%;
+        }
+        span {
+          display: flex;
+          justify-content: center;
+          gap: 32px;
+          align-items: center;
+          @media screen and (max-width: 768px) {
+            display: none;
+          }
+          .arrow-con {
+            width: 51px;
+            height: 51px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 36px 14px rgba(63, 120, 67, 0.01),
+              0px 20px 12px rgba(63, 120, 67, 0.05),
+              0px 9px 9px rgba(63, 120, 67, 0.09),
+              0px 2px 5px rgba(63, 120, 67, 0.1),
+              0px 0px 0px rgba(63, 120, 67, 0.1);
+          }
+        }
+      }
+      .options {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        width: 100%;
+        flex-wrap: wrap;
+        cursor: pointer;
+        @media screen and (max-width: 475px) {
+          justify-content: center;
+        }
+
+        .opt-main {
+          width: calc(100% / 4 - 20px);
+          border-radius: 10px;
+          box-shadow: 0px 4px 6px 2px rgba(0, 0, 0, 0.25);
+
+          .opt-con {
+            gap: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+
+            img {
+              width: 100%;
+              height: 200px;
+            }
+
+            .opt-det {
+              display: flex;
+              justify-content: flex-start;
+              flex-direction: column;
+              gap: 10px;
+              padding: 10px;
+
+              h2 {
+                color: #3f7843;
+
+                span {
+                  font-weight: 400;
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+
+          .foot-con {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #eeeeee;
+            padding: 5px;
+            border-radius: 0px 0px 10px 10px;
+
+            .foot-main {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              width: 99%;
+            }
+          }
+        }
+
+        @media (max-width: 992px) {
+          .opt-main {
+            width: calc(50% - 150px);
+          }
+        }
+
+        @media (max-width: 768px) {
+          .opt-main {
+            width: calc(50% - 10px);
+          }
+        }
+        @media (max-width: 475px) {
+          .opt-main {
+            width: calc(100% - 20px);
+          }
+        }
+      }
+      .mobilecntrl {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        .arrow-con-2 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 30px;
+          width: 30px;
+          border-radius: 50%;
+          box-shadow: 0px 4px 6px 2px rgba(0, 0, 0, 0.25);
+          cursor: pointer;
+          @media screen and (min-width: 768px) {
+            display: none;
+          }
+        }
+        .nxt {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
