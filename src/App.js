@@ -17,6 +17,7 @@ import UserDashboard from "./component/Pages/DasboardPages/UserDashboard";
 import SingleProperty from "./component/Pages/SingleProperty";
 import AdminLayout from "./component/Pages/admin/home/AdminLayout";
 import MyListings from "./component/Pages/DasboardPages/MyListings";
+import Subscriptions from "./component/Pages/DasboardPages/Subscriptions";
 
 const App = () => {
   return (
@@ -40,7 +41,7 @@ const App = () => {
         <Route path="/dashboard/*" element={<UserLayout />} />
         <Route path="/dashboard/" element={<UserDashboard />} />
         <Route path="/dashboard/my_listings" element={<MyListings />} />
-        <Route path="/dashboard/subscription" element={<UserLayout />} />
+        <Route path="/dashboard/subscription" element={<Subscriptions />} />
         <Route path="/dashboard/favourites" element={<UserLayout />} />
         <Route path="/dashboard/profile" element={<UserLayout />} />
         <Route path="/dashboard/help" element={<UserLayout />} />
