@@ -1,11 +1,55 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar } from "../Navbar";
-import { Footer } from "./Footer";
 import facebook from "../Pages/SVG/facebook.svg";
 import google from "../Pages/SVG/google.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+import { register, reset } from "../../redux/auth/authSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 const SignUp = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [name, setName] = useState("");
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
+    }
+
+    if (isSuccess) {
+      toast.success("Registered Successfully");
+      navigate("/login");
+    }
+
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, navigate, dispatch]);
+
+  const registerUser = (e) => {
+    e.preventDefault();
+    if (password !== password2) {
+      toast.error("Passwords do not match");
+    } else {
+      const userData = {
+        name,
+        email,
+        password,
+        mobile,
+      };
+      dispatch(register(userData));
+    }
+    console.log("clicked");
+  };
+
   return (
     <>
       <Navbar />
@@ -27,22 +71,41 @@ const SignUp = () => {
                   to your account
                 </p>
               </div>
-              <form action="#">
+              <form method="POST" onSubmit={registerUser}>
                 <div className="input-box_register">
-                  <input type="text" required placeholder="First Name" />
-                  <input type="text" required placeholder="Last Name" />
+                  <input
+                    type="text"
+                    required
+                    placeholder="First and Last Names"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
                 </div>
                 <div className="input-box">
-                  <input type="email" required placeholder="Email Address" />
+                  <input
+                    type="email"
+                    required
+                    placeholder="Email Address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </div>
                 <div className="input-box">
-                  <input type="password" required placeholder="Password" />
+                  <input
+                    type="password"
+                    required
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
                 </div>
                 <div className="input-box">
                   <input
                     type="password"
                     required
                     placeholder="Confirm Password"
+                    value={password2}
+                    onChange={(e) => setPassword2(e.target.value)}
                   />
                 </div>
                 <div className="t_c">
@@ -54,7 +117,11 @@ const SignUp = () => {
                     </p>
                   </label>
                   <button type="submit" className="btn_">
-                    Sign up
+                    {isLoading ? (
+                      <FontAwesomeIcon icon={faSpinner} spin />
+                    ) : (
+                      "Sign Up"
+                    )}
                   </button>
                 </div>
                 <div className="or">
