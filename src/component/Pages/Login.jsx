@@ -26,7 +26,11 @@ const Login = () => {
     }
 
     if (isSuccess) {
-      navigate("/dashboard");
+      if (user.account.role === "admin") {
+        navigate("/admin");
+      } else {
+        navigate("/dashboard");
+      }
       toast.success("Logged in");
       dispatch(reset());
     }

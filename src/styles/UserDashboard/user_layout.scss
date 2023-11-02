@@ -126,6 +126,9 @@
               border-radius: 50%;
             }
           }
+          @media screen and (max-width: 800px) {
+            display: none;
+          }
         }
       }
     }
@@ -136,4 +139,7 @@
       // width: 100%;
     }
   }
+}
+
+@media screen and (max-width: 800px) {
 }

@@ -4,7 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleDown,
   faArrowAltCircleUp,
+  faBars,
   faSignOut,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import home from "../DasboardPages/Icons/home (2) 1.png";
 import {
@@ -13,8 +15,15 @@ import {
   faUserCircle,
 } from "@fortawesome/free-regular-svg-icons";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 const UserLayout = ({ content }) => {
+  const [toggle, setToggle] = useState(false);
+
+  function handleToggle() {
+    setToggle(!toggle);
+  }
+
   return (
     <>
       <div className="user-layout">
@@ -23,7 +32,7 @@ const UserLayout = ({ content }) => {
             <h1>HomeLander</h1>
             <hr />
           </div>
-          <div className="right-side-contents">
+          <div className={toggle ? "right-side-contents" : "active-nav"}>
             <div className="content-pages">
               <div className="content-page">
                 <NavLink
@@ -91,6 +100,7 @@ const UserLayout = ({ content }) => {
         <div className="left-side">
           <div className="left-side-header">
             <div className="left-header-content">
+              <FontAwesomeIcon icon={toggle ? faXmark : faBars} />
               <h2>Hello Ossai Jenas</h2>
               <div className="left-profile-section">
                 <span>My Subscription</span>

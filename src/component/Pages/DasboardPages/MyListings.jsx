@@ -31,7 +31,7 @@ const Content = () => {
           <button>Post a property</button>
         </div>
         <div className="top-btm">
-          <input type="search" placeholder="Search" />
+          <input type="search" placeholder="Search" className="search-input" />
           <button>
             Filter <FontAwesomeIcon icon={faFilter} />
           </button>

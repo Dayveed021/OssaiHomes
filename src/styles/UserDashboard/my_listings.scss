@@ -11,7 +11,7 @@
   flex-direction: column;
   width: 100%;
   gap: 20px;
-  padding: 20px;
+  // padding: 20px;
   @media screen and (max-width: 769px) {
     padding: 0px;
   }
@@ -33,6 +33,11 @@
       align-items: center;
       justify-content: space-between;
       width: 100%;
+      .search-input {
+        height: 35px;
+        padding-inline: 10px;
+        width: 60%;
+      }
     }
   }
   .user-listings {
@@ -45,9 +50,9 @@
     padding: 20px;
     border-radius: 5px;
     background-color: #ffffff;
-    // @media screen and (max-width: 769px) {
-    //   padding: 0px;
-    // }
+    @media screen and (max-width: 600px) {
+      padding: 10px;
+    }
     .published-unpublished {
       display: flex;
       align-items: flex-start;
@@ -81,22 +86,24 @@
     }
     .listing-details {
       display: flex;
-      margin-block: 1rem;
+      // margin-block: 1rem;
       border-radius: 12px;
-      margin-top: 2rem;
+      // margin-top: 2rem;
       padding: 20px;
       background-color: #ffffff;
       border: 0.3px solid #000;
       @media screen and (max-width: 769px) {
         flex-direction: column;
         align-items: center;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
+        width: 100% !important;
+        // margin-left: auto;
+        // margin-right: auto;
+        // padding: 10px;
+        padding: 5px;
       }
       @media screen and (max-width: 1180px) {
         flex-direction: column;
-        width: 90%;
+        // width: 90%;
       }
 
       .img-left {
@@ -135,6 +142,10 @@
           justify-content: space-between;
           align-items: center;
           width: 100%;
+          @media screen and (max-width: 600px) {
+            flex-direction: column;
+            align-items: flex-start;
+          }
         }
         .name-action {
           display: flex;
@@ -196,6 +207,9 @@
             border-radius: 7px;
             height: 35px;
             margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             img {
               width: 14px;
               height: 14px;

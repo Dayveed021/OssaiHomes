@@ -21,6 +21,7 @@ import Subscriptions from "./component/Pages/DasboardPages/Subscriptions";
 import Favourites from "./component/Pages/DasboardPages/Favourites";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AuthRedirect } from "./AuthRedirect";
 
 const App = () => {
   return (
@@ -34,15 +35,50 @@ const App = () => {
         <Route path="/mylist" element={<MyList />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/admin/*" element={<AdminLayout />} />
-        <Route path="/admin/" element={<Dashboard />} />
-        <Route path="/admin/profile" element={<Profile />} />
+        {/* <Route
+          path="/admin"
+          element={
+            <AuthRedirect adminRoute>
+              <AdminLayout />
+            </AuthRedirect>
+          }
+        /> */}
+        <Route
+          path="/admin/"
+          element={
+            <AuthRedirect adminRoute>
+              <AdminLayout />
+            </AuthRedirect>
+          }
+        />
+        <Route
+          path="/admin/profile"
+          element={
+            <AuthRedirect adminRoute>
+              <Profile />
+            </AuthRedirect>
+          }
+        />
         <Route path="/admin/agents" element={<Agents />} />
         <Route path="/admin/agents/details" element={<AgentDetails />} />
         <Route path="/admin/transactions" element={<Transactions />} />
         <Route path="/admin/properties" element={<Properties />} />
-        <Route path="/dashboard/*" element={<UserLayout />} />
-        <Route path="/dashboard/" element={<UserDashboard />} />
+        {/* <Route
+          path="/dashboard"
+          element={
+            <AuthRedirect userRoute>
+              <UserLayout />
+            </AuthRedirect>
+          }
+        /> */}
+        <Route
+          path="/dashboard/"
+          element={
+            <AuthRedirect userRoute>
+              <UserDashboard />
+            </AuthRedirect>
+          }
+        />
         <Route path="/dashboard/my_listings" element={<MyListings />} />
         <Route path="/dashboard/subscription" element={<Subscriptions />} />
         <Route path="/dashboard/favourites" element={<Favourites />} />
