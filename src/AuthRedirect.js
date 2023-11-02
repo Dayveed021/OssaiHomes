@@ -5,8 +5,8 @@ import { toast } from "react-toastify";
 
 export const AuthRedirect = ({ adminRoute, userRoute, children }) => {
   const user = useSelector((state) => state.auth.user);
-  const agent = user.account.role === "agent";
-  const admin = user.account.role === "admin"; // Safely access nested properties
+  const agent = user?.account?.role === "agent";
+  const admin = user?.account?.role === "admin"; // Safely access nested properties
 
   if (adminRoute && agent) {
     toast.info("You are not logged in as an admin");
