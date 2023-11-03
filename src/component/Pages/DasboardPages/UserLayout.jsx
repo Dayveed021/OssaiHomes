@@ -16,16 +16,23 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { logout, reset } from "../../../redux/auth/authSlice";
 
 const UserLayout = ({ content }) => {
   const [toggle, setToggle] = useState(false);
   const { user, isLoading, isError, isSuccess, message } = useSelector(
     (state) => state.auth
   );
+  const dispatch = useDispatch();
 
   function handleToggle() {
     setToggle(!toggle);
+  }
+
+  function handleLogout() {
+    dispatch(logout());
+    dispatch(reset());
   }
 
   return (
@@ -92,7 +99,7 @@ const UserLayout = ({ content }) => {
                   <p>Help Center</p>
                 </NavLink>
               </div>
-              <div className="content-page">
+              <div className="content-page" onClick={handleLogout}>
                 <NavLink to="/login" className="not">
                   <FontAwesomeIcon icon={faSignOut} />
                   <p>Sign Out</p>
