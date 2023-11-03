@@ -21,6 +21,7 @@ import Subscriptions from "./component/Pages/DasboardPages/Subscriptions";
 import Favourites from "./component/Pages/DasboardPages/Favourites";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AgentProfile from "./component/Pages/DasboardPages/AgentProfile";
 import { AuthRedirect } from "./AuthRedirect";
 
 const App = () => {
@@ -82,7 +83,7 @@ const App = () => {
         <Route path="/dashboard/my_listings" element={<MyListings />} />
         <Route path="/dashboard/subscription" element={<Subscriptions />} />
         <Route path="/dashboard/favourites" element={<Favourites />} />
-        <Route path="/dashboard/profile" element={<UserLayout />} />
+        <Route path="/dashboard/profile" element={<AgentProfile />} />
         <Route path="/dashboard/help" element={<UserLayout />} />
       </Routes>
       <ToastContainer />
