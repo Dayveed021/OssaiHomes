@@ -1,6 +1,7 @@
 import { useState } from "react";
 import AdminLayout from "../home/AdminLayout"
 import "./profile.scss";
+import { useSelector, useDispatch } from "react-redux";
 
 
 const Profile = ()=>{
@@ -15,6 +16,9 @@ const Profile = ()=>{
 const Content = ()=>{
     
     const [toggleState, setToggleState] = useState(1);
+    const { user, isLoading, isError, isSuccess, message } = useSelector(
+        (state) => state.auth
+      );
 
     const toggleTab = (index)=>{
         setToggleState(index);
@@ -36,19 +40,19 @@ const Content = ()=>{
                             <h5>Agent Details</h5>
                             <div className="agent-details">
                                 <p className="ligh-p">Name</p>
-                                <p className="bold-p">Ossai Real Estate Agency</p>
+                                <p className="bold-p">{user.account.name}</p>
                             </div>
                             <div className="agent-details">
                                 <p className="ligh-p">Email</p>
-                                <p className="bold-p">Ossaijenas@gmail.com</p>
+                                <p className="bold-p">{user.account.email}</p>
                             </div>
                             <div className="agent-details">
                                 <p className="ligh-p">Phone Number</p>
-                                <p className="bold-p">08131877486</p>
+                                <p className="bold-p">{user.account.phone}</p>
                             </div>
                             <div className="agent-details">
                                 <p className="ligh-p">Whatsapp Number</p>
-                                <p className="bold-p">08131877486</p>
+                                <p className="bold-p">{user.account.phone}</p>
                             </div>
 
                             <button className="view-btn">View Government ID</button>

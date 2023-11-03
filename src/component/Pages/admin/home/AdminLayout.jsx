@@ -1,8 +1,12 @@
 import React from "react";
 import "./admin.scss";
 import { NavLink } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 const AdminLayout = ({ content }) => {
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
   return (
     <div>
       <div className="container">
@@ -108,7 +112,7 @@ const AdminLayout = ({ content }) => {
                   src="../../flaticons/Ellipse23.png"
                   alt="profile"
                 />
-                <h4>Ossai Jenas</h4>
+                <h4>{user.account.name}</h4>
                 <img
                   className="dropdown"
                   src="../../flaticons/expand-button3.png"
