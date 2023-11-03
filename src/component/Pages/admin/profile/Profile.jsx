@@ -73,18 +73,24 @@ const Content = ()=>{
                     <div className="profile-form">
                             <h5 className="h5-header">Personal Details </h5>
                             <form action="">
-                                <label for="agent-name">Name</label><br/>
-                                <input type="text" className="input-long" id="agent-name" name="agent-name" placeholder="Ossai Jenas" /><br/>
-                                <label> Upload Your Government Isuued ID</label>
-                                <label className="btn-upload" for="upload-id">Upload ID</label>
-                                <input type="file" name="upload-id" id="upload-id" accept="image/*" style={{display:"none"}}/>
+                                <label for="agent-name">Name</label>
+                                <input type="text" className="input-long" id="agent-name" name="agent-name" placeholder="Ossai Jenas" />
+                                <div className="id-upload">
+                                    <label className="govt"> Upload Your Government Isuued ID </label>
+                                    <label className="btn-upload" for="upload-id">Upload ID</label>
+                                    <input type="file" name="upload-id" id="upload-id" accept="image/*" style={{display:"none"}}/>
+                                </div>
+                                
                                 
                                 <div className="form-header">Business Details</div>
-                                <label for="business-name" >Business Name</label><br/>
-                                <input type="text" id="business-name" className="input-long" name="business-name" placeholder="Ossai Real Estate" /><br/>
-                                <label>Upload Company Logo</label>
-                                <label className="btn-upload" for="upload-logo">Upload Logo</label>
-                                <input type="file" name="upload-logo" id="upload-logo" accept="image/*" style={{display:"none"}}/>
+                                <label for="business-name" >Business Name</label>
+                                <input type="text" id="business-name" className="input-long" name="business-name" placeholder="Ossai Real Estate" />
+                                <div className="logo-upload">
+                                    <label>Upload Company Logo</label>
+                                    <label className="btn-upload" for="upload-logo">Upload Logo</label>
+                                    <input type="file" name="upload-logo" id="upload-logo" accept="image/*" style={{display:"none"}}/>                          
+                                </div>
+                                
                                 <div className="form-header">Address</div>
                                 <div className="combine-field">
                                     <div className="address-field">
@@ -109,8 +115,8 @@ const Content = ()=>{
                                      </div>
                                 </div>
 
-                                <label for="email">Email</label><br/>
-                                <input type="email" className="input-long" id="email" name="email" placeholder="Ossaijenas@gmail.com" /><br/>
+                                <label for="email">Email</label>
+                                <input type="email" className="input-long" id="email" name="email" placeholder="Ossaijenas@gmail.com" />
                                 <div className="submit">
                                     <button className="submit-btn" type="submit">Update</button>
                                 </div>

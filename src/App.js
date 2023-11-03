@@ -48,7 +48,7 @@ const App = () => {
           path="/admin/"
           element={
             <AuthRedirect adminRoute>
-              <AdminLayout />
+              <Dashboard />
             </AuthRedirect>
           }
         />
