@@ -16,9 +16,13 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const UserLayout = ({ content }) => {
   const [toggle, setToggle] = useState(false);
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
 
   function handleToggle() {
     setToggle(!toggle);
@@ -100,13 +104,23 @@ const UserLayout = ({ content }) => {
         <div className="left-side">
           <div className="left-side-header">
             <div className="left-header-content">
-              <FontAwesomeIcon icon={toggle ? faXmark : faBars} />
-              <h2>Hello Ossai Jenas</h2>
+              <FontAwesomeIcon
+                icon={toggle ? faXmark : faBars}
+                onClick={handleToggle}
+                className="ham"
+              />
+              <h2 className="acc-name">Hello {user.account.name}</h2>
+              <h2 className="logo">HomeLander</h2>
+              <div className="image">
+                <img src="" alt="" />
+              </div>
               <div className="left-profile-section">
                 <span>My Subscription</span>
                 <div className="left-prof-img">
-                  <img src="" alt="" />
-                  <span>Ossai Jenas</span>
+                  <div className="image-1">
+                    <img src="" alt="" />
+                  </div>
+                  <span>{user.account.name}</span>
                   <FontAwesomeIcon icon={faAngleDown} />
                 </div>
               </div>

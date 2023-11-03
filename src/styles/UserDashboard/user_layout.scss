@@ -12,20 +12,20 @@
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
-    width: 280px;
+    width: fit-content;
     height: 100%;
-    @media screen and (max-width: 700px) {
-      display: none;
-    }
 
     .right-side-header {
-      width: 100%;
+      width: 280px;
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
       flex-direction: column;
       gap: 15px;
       padding: 0px 0px 25px 0px;
+      @media screen and (max-width: 800px) {
+        display: none;
+      }
       h1 {
         color: #3f7843;
         text-align: center;
@@ -37,13 +37,16 @@
         width: 100%;
       }
     }
-    .right-side-contents {
-      width: 230px;
+    .active-nav {
+      width: 280px;
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
       flex-direction: column;
       padding: 0px 0px 0px 36px;
+      @media screen and (max-width: 800px) {
+        display: none;
+      }
       .content-pages {
         width: 100%;
         display: flex;
@@ -103,14 +106,46 @@
         padding: 10.8px 35px 10.8px 35px;
         width: 100%;
         border-bottom: 0.2px solid gray;
-        h2 {
-          font-size: 28px;
+        .ham {
+          display: none;
+          @media screen and (max-width: 800px) {
+            display: block;
+          }
+        }
+        .acc-name {
+          @media screen and (max-width: 800px) {
+            display: none;
+          }
+        }
+        .logo {
+          display: none;
+          @media screen and (max-width: 800px) {
+            display: block;
+          }
+        }
+        .image {
+          display: none;
+          @media screen and (max-width: 800px) {
+            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            width: 40px;
+          }
+          img {
+            width: 100%;
+            height: inherit;
+            border: 1px dashed gray;
+            border-radius: 50%;
+          }
         }
         .left-profile-section {
           display: flex;
           align-items: center;
           justify-content: center;
           gap: 20px;
+          width: fit-content;
           span {
             font-weight: 500;
           }
@@ -119,11 +154,22 @@
             align-items: center;
             justify-content: center;
             gap: 3px;
-            img {
+            width: 100%;
+            .image-1 {
+              display: flex;
+              align-items: center;
+              justify-content: center;
               height: 40px;
-              width: 30%;
-              border: 1px dashed gray;
-              border-radius: 50%;
+              width: 40px;
+              @media screen and (max-width: 800px) {
+                display: none;
+              }
+              img {
+                width: 100%;
+                height: inherit;
+                border: 1px dashed gray;
+                border-radius: 50%;
+              }
             }
           }
           @media screen and (max-width: 800px) {
@@ -136,10 +182,75 @@
       overflow: auto;
       height: 100vh;
       padding: 20px;
-      // width: 100%;
+      @media screen and (max-width: 800px) {
+        padding: 10px;
+      }
     }
   }
 }
 
 @media screen and (max-width: 800px) {
+  .right-side-contents {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    width: 60%;
+    height: 100vh;
+    background-color: white;
+    margin-right: 0px;
+    padding: 20px 10px;
+    animation: slideIn 0.5s ease-in-out forwards;
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+      }
+
+      to {
+        transform: translateX(0%);
+      }
+    }
+
+    .content-pages {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      .content-page {
+        width: 225px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        color: #4d4d4d;
+        gap: 8px;
+        width: 100%;
+        p {
+          font-size: 16px;
+        }
+        .is-active {
+          background-color: #bfbfbf;
+          width: 100%;
+          padding: 16px 0px 16px 16px;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 8px;
+          font-weight: 500;
+          color: #000;
+        }
+        .not {
+          background-color: #fff;
+          width: 100%;
+          padding: 16px 0px 16px 16px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 8px;
+        }
+      }
+    }
+  }
 }
