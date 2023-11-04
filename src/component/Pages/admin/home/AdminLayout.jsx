@@ -2,11 +2,19 @@ import React from "react";
 import "./admin.scss";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { logout, reset } from "../../../../redux/auth/authSlice";
 
 const AdminLayout = ({ content }) => {
   const { user, isLoading, isError, isSuccess, message } = useSelector(
-    (state) => state.auth
-  );
+    (state) => state.auth 
+     );
+
+     const dispatch = useDispatch();
+
+     const handleLogout = ()=>{
+      dispatch(logout());
+      dispatch(reset());
+     }
   return (
     <div>
       <div className="container">
@@ -89,6 +97,22 @@ const AdminLayout = ({ content }) => {
                     alt="icon"
                   />
                   Transactions
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "active" : "menu-list"
+                  }
+                  onClick={handleLogout}
+                  to="/login"
+                >
+                  <img
+                    src="../../flaticons/power.png"
+                    className="menu-icon"
+                    alt="icon"
+                  />
+                  Logout
                 </NavLink>
               </li>
             </ul>
