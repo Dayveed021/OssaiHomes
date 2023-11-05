@@ -41,14 +41,14 @@ const Content = () => {
         <div className="published-unpublished">
           <header>
             <h3
-              onClick={handleTabClick}
-              style={{ borderBottom: tab ? "2px solid #3f7843" : "" }}
+              onClick={handleNTabClick}
+              style={{ borderBottom: tab ? "" : "2px solid #3f7843" }}
             >
               Published
             </h3>
             <h3
-              onClick={handleNTabClick}
-              style={{ borderBottom: tab ? "" : "2px solid #3f7843" }}
+              onClick={handleTabClick}
+              style={{ borderBottom: tab ? "2px solid #3f7843" : "" }}
             >
               Unpublished
             </h3>
@@ -65,6 +65,8 @@ const Content = () => {
         </div>
         <></>
         {tab ? (
+          ""
+        ) : (
           <div className="listing-details">
             <div className="img-left">
               <img src="/Pictures/Rectangle-244.png" alt="property-img" />
@@ -112,8 +114,6 @@ const Content = () => {
               </div>
             </div>
           </div>
-        ) : (
-          ""
         )}
       </div>
     </div>

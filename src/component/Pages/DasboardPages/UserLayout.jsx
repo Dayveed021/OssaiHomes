@@ -14,7 +14,7 @@ import {
   faQuestionCircle,
   faUserCircle,
 } from "@fortawesome/free-regular-svg-icons";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "../../../redux/auth/authSlice";
@@ -118,15 +118,15 @@ const UserLayout = ({ content }) => {
               />
               <h2 className="acc-name">Hello {user.account.name}</h2>
               <h2 className="logo">HomeLander</h2>
-              <div className="image">
+              <Link to="/dashboard/profile" className="image">
                 <img src="" alt="" />
-              </div>
+              </Link>
               <div className="left-profile-section">
                 <span>My Subscription</span>
                 <div className="left-prof-img">
-                  <div className="image-1">
+                  <Link to="/dashboard/profile" className="image-1">
                     <img src="" alt="" />
-                  </div>
+                  </Link>
                   <span>{user.account.name}</span>
                   <FontAwesomeIcon icon={faAngleDown} />
                 </div>

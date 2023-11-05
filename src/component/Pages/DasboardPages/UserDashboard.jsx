@@ -5,6 +5,7 @@ import "../../../styles/UserDashboard/user-home.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faUpload } from "@fortawesome/free-solid-svg-icons";
 import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
+import { Link } from "react-router-dom";
 
 const pictures = [
   {
@@ -95,7 +96,9 @@ const Content = () => {
         </div>
         <div className="save-next">
           <button className="save-btn">Save</button>
-          <button className="nxt-btn">Next</button>
+          <Link to="/dashboard/publish_property">
+            <button className="nxt-btn">Next</button>
+          </Link>
         </div>
       </main>
     </div>

@@ -23,6 +23,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AgentProfile from "./component/Pages/DasboardPages/AgentProfile";
 import { AuthRedirect } from "./AuthRedirect";
+import PublishPage from "./component/Pages/DasboardPages/PublishPage";
 
 const App = () => {
   return (
@@ -80,6 +81,7 @@ const App = () => {
             </AuthRedirect>
           }
         />
+        <Route path="/dashboard/publish_property" element={<PublishPage />} />
         <Route path="/dashboard/my_listings" element={<MyListings />} />
         <Route path="/dashboard/subscription" element={<Subscriptions />} />
         <Route path="/dashboard/favourites" element={<Favourites />} />
