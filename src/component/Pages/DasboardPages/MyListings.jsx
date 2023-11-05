@@ -3,6 +3,7 @@ import UserLayout from "./UserLayout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter, faLocationPin } from "@fortawesome/free-solid-svg-icons";
 import "../../../styles/UserDashboard/my_listings.scss";
+import { Link } from "react-router-dom";
 
 const MyListings = () => {
   return (
@@ -28,7 +29,9 @@ const Content = () => {
       <div className="mylistings-top">
         <div className="top-title">
           <h2>My Listings</h2>
-          <button>Post a property</button>
+          <Link to="/dashboard/publish_property">
+            <button>Post a property</button>
+          </Link>
         </div>
         <div className="top-btm">
           <input type="search" placeholder="Search" className="search-input" />
