@@ -67,7 +67,7 @@ const Content = () => {
       formData.append('propertyImages', files[i]);
     }
       try {
-        const response = await fetch("http://localhost:8000/v1/properties", {
+        const response = await fetch("https://homelanda-1d0d1907d8ae.herokuapp.com/v1/properties", {
           method: 'POST',
           body: formData,
           headers: {
