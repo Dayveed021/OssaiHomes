@@ -67,7 +67,7 @@ const Content = () => {
       formData.append('propertyImages', files[i]);
     }
       try {
-        const response = await fetch("https://homelanda-1d0d1907d8ae.herokuapp.com/v1/properties", {
+        const response = await fetch("http://localhost:8000/v1/properties", {
           method: 'POST',
           body: formData,
           headers: {
@@ -75,9 +75,9 @@ const Content = () => {
             "Authorization": `Bearer ${user.access_token}`
           }
         });
+        const data = await response.json();
   
         if (response.ok) {
-          const data = await response.json();
           setTitle("");
           setAddress("");
           setType("");
@@ -99,7 +99,7 @@ const Content = () => {
           //dispatch({type: "CREATE_PROPERTY", payload: data});
           
         } else {
-          setError(response.statusText);
+          setError(data.message);
         }
       } catch (error) {
         console.error('Error:', error);
