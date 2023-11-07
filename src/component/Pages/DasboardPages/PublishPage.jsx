@@ -71,13 +71,12 @@ const Content = () => {
           method: 'POST',
           body: formData,
           headers: {
-            //'Content-Type': 'multipart/form-data',
             "Authorization": `Bearer ${user.access_token}`
           }
         });
+        const data = await response.json();
   
         if (response.ok) {
-          const data = await response.json();
           setTitle("");
           setAddress("");
           setType("");
@@ -99,7 +98,7 @@ const Content = () => {
           //dispatch({type: "CREATE_PROPERTY", payload: data});
           
         } else {
-          setError(response.statusText);
+          setError(data.message);
         }
       } catch (error) {
         console.error('Error:', error);
