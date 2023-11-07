@@ -71,7 +71,6 @@ const Content = () => {
           method: 'POST',
           body: formData,
           headers: {
-            //'Content-Type': 'multipart/form-data',
             "Authorization": `Bearer ${user.access_token}`
           }
         });
