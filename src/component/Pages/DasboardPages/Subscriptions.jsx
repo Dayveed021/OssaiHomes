@@ -40,7 +40,7 @@ const Content = () => {
       if (response.ok) {
         setSubscriptionResults(prevResults => ({
           ...prevResults,
-          [id]: 'Property Was Added Successfully',
+          [id]: 'Subscription was Successfully',
         }));
 
         // Redirect to /dashboard/publish_property upon successful subscription
