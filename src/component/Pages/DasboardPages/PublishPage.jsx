@@ -129,7 +129,7 @@ const Content = () => {
                 <label htmlFor="">Title</label>
                 <input type="text" 
                 value={title}
-                onChange={(e)=> setTitle(e.target.value)}
+                onChange={(e)=> setTitle(e.target.value.toLowerCase())}
                 placeholder="Propety Title"
                 required
                 />
@@ -141,7 +141,7 @@ const Content = () => {
                 <div className="d-inputs">
                   <div className="inputs">
                     <label htmlFor="">Category</label>
-                    <select name="category" id="" value={category} onChange={(e)=> setCategory(e.target.value)} required>
+                    <select name="category" id="" value={category} onChange={(e)=> setCategory(e.target.value.toLowerCase())} required>
                       <option value="">Select</option>
                       <option value="duplex">Duplex</option>
                       <option value="bugalow">bugalow</option>
@@ -150,7 +150,7 @@ const Content = () => {
                   </div>
                   <div className="inputs">
                     <label htmlFor="">Type</label>
-                    <select name="type" id="" value={type} onChange={(e)=> setType(e.target.value)} required>
+                    <select name="type" id="" value={type} onChange={(e)=> setType(e.target.value.toLowerCase())} required>
                       <option value="">Select</option>
                       <option value="buy">Buy</option>
                       <option value="Rent">Rent</option>
@@ -218,11 +218,11 @@ const Content = () => {
                 <div className="d-inputs">
                   <div className="inputs">
                     <label htmlFor="">State</label>
-                    <input type="text" value={state} onChange={(e)=> setState(e.target.value)} placeholder="State" required/>
+                    <input type="text" value={state} onChange={(e)=> setState(e.target.value.toLowerCase())} placeholder="State" required/>
                   </div>
                   <div className="inputs">
                     <label htmlFor="">City</label>
-                    <input type="text" value={city} onChange={(e)=> setCity(e.target.value)} placeholder="City" required/>
+                    <input type="text" value={city} onChange={(e)=> setCity(e.target.value.toLowerCase())} placeholder="City" required/>
                   </div>
                 </div>
               </div>
@@ -230,11 +230,11 @@ const Content = () => {
                 <div className="d-inputs">
                   <div className="inputs">
                     <label htmlFor="">Street/Estate</label>
-                    <input type="text" value={address} onChange={(e)=> setAddress(e.target.value)} placeholder="Address" required/>
+                    <input type="text" value={address} onChange={(e)=> setAddress(e.target.value.toLowerCase())} placeholder="Address" required/>
                   </div>
                   <div className="inputs">
                     <label htmlFor="">Location</label>
-                    <input type="text" value={location} onChange={(e)=> setLocation(e.target.value)} placeholder="Area e.g Lekki" required/>
+                    <input type="text" value={location} onChange={(e)=> setLocation(e.target.value.toLowerCase())} placeholder="Area e.g Lekki" required/>
                   </div>
                 </div>
               </div>
@@ -262,7 +262,7 @@ const Content = () => {
               <h3>Description</h3>
               <div className="form-input">
                 <label htmlFor="">Property Details</label>
-                <textarea value={desc} onChange={(e)=> setDesc(e.target.value)}
+                <textarea value={desc} onChange={(e)=> setDesc(e.target.value.toLowerCase())}
                   name=""
                   id=""
                   cols="30"
