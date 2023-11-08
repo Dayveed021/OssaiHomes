@@ -50,7 +50,7 @@ const Content = () => {
         const errorData = await response.json();
         setSubscriptionResults(prevResults => ({
           ...prevResults,
-          [id]: errorData.message || 'Failed to subscribe',
+          [id]: errorData.message || 'Failed To Subscribe',
         }));
       }
     } catch (error) {
