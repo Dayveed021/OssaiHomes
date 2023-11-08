@@ -40,7 +40,7 @@ const Content = () => {
       if (response.ok) {
         setSubscriptionResults(prevResults => ({
           ...prevResults,
-          [id]: 'Property Was Added Successfully',
+          [id]: 'Subscription was Successfully',
         }));
 
         // Redirect to /dashboard/publish_property upon successful subscription
@@ -50,7 +50,7 @@ const Content = () => {
         const errorData = await response.json();
         setSubscriptionResults(prevResults => ({
           ...prevResults,
-          [id]: errorData.message || 'Failed to subscribe',
+          [id]: errorData.message || 'Failed To Subscribe',
         }));
       }
     } catch (error) {
