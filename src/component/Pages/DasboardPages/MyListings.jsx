@@ -44,7 +44,7 @@ const Content = () => {
      
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8000/v1/properties/agent",{
+        const response = await fetch("https://homelanda-1d0d1907d8ae.herokuapp.com/v1/properties/agent",{
           method: "GET",
           headers: {
             "Authorization": `Bearer ${user.access_token}`
@@ -131,57 +131,57 @@ const Content = () => {
               {data && data.length > 0 && (
                 <div>
                     {data && currentItems.map((item,index)=>{
-              return(
-                <div className="listing-details">
+                  return(
+                    <div className="listing-details">
             
-            <div className="img-left">
-              <img src={`https://homelanda-1d0d1907d8ae.herokuapp.com/v1/properties/images/${item.propertyImages[0]}`} alt="property-img" />
-            </div>
-            <div className="details-right">
-              <div className="name-action">
-                <h2>{item.agent.name}</h2>
-                <select name="" id="">
-                  <option value="">Action</option>
-                  <option value="">Edit</option>
-                  <option value="">Delete</option>
-                </select>
-              </div>
-              <h3>
-                <FontAwesomeIcon icon={faLocationPin} />
-                Warri Delta State
-              </h3>
-              <div className="details-time">
-                <p>Create At {moment(item.createdAt).format('MM-DD-YYYY')}</p>
-                <p> Last Updated {moment(item.updatedAt).format('MM-DD-YYYY')}</p>
-              </div>
-              <p>Automatic Boost: 0</p>
-              <div className="price-call-btn">
-                <p>
-                  {" "}
-                  <span>{item.pricePerMonth}</span>/month
-                </p>
-                <button>
-                  <img src="/Pictures/telephone-call-1.png" alt="" />{" "}
-                  <span>Call</span>
-                </button>
-              </div>
-              <div className="facilaties">
-                <div className="toilet">
-                  <img src="/Pictures/water-closet-1.png" alt="" /> {item.tiolets} guest
-                  toilet
+                      <div className="img-left">
+                        <img src={`https://homelanda-1d0d1907d8ae.herokuapp.com/v1/properties/images/${item.propertyImages[0]}`} alt="property-img" />
+                      </div>
+                    <div className="details-right">
+                      <div className="name-action">
+                        <h2>{item.agent.name}</h2>
+                        <select name="" id="">
+                          <option value="">Action</option>
+                          <option value="">Edit</option>
+                          <option value="">Delete</option>
+                        </select>
+                      </div>
+                      <h3>
+                        <FontAwesomeIcon icon={faLocationPin} />
+                        Warri Delta State
+                      </h3>
+                      <div className="details-time">
+                        <p>Create At {moment(item.createdAt).format('MM-DD-YYYY')}</p>
+                        <p> Last Updated {moment(item.updatedAt).format('MM-DD-YYYY')}</p>
+                      </div>
+                      <p>Automatic Boost: 0</p>
+                      <div className="price-call-btn">
+                        <p>
+                          {" "}
+                          <span>{item.pricePerMonth}</span>/month
+                        </p>
+                        <button>
+                          <img src="/Pictures/telephone-call-1.png" alt="" />{" "}
+                          <span>Call</span>
+                        </button>
+                      </div>
+                      <div className="facilaties">
+                        <div className="toilet">
+                          <img src="/Pictures/water-closet-1.png" alt="" /> {item.tiolets} guest
+                          toilet
+                        </div>
+                        <div className="bedroom">
+                          <img src="/Pictures/double-bed-1.png" alt="" /> {item.bedrooms} bedrooms
+                        </div>
+                        <div className="bathroom">
+                          <img src="/Pictures/bath-1.png" alt="" /> {item.bathrooms} bathrooms
+                        </div>
+                        <input type="checkbox" />
+                      </div>
+                    </div>
                 </div>
-                <div className="bedroom">
-                  <img src="/Pictures/double-bed-1.png" alt="" /> {item.bedrooms} bedrooms
-                </div>
-                <div className="bathroom">
-                  <img src="/Pictures/bath-1.png" alt="" /> {item.bathrooms} bathrooms
-                </div>
-                <input type="checkbox" />
-              </div>
-            </div>
-          </div>
-              )
-            })}
+                  )
+                })}
                 </div>
               )}
             </div>
