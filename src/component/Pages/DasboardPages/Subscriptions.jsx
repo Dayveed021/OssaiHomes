@@ -17,8 +17,6 @@ export default Subscriptions;
 const Content = () => {
 
   const [data, setData] = useState(null);
-  const [packageID, setPackageID] = useState("");
-  const [ result, setResult ] = useState("");
   const [subscriptionResults, setSubscriptionResults] = useState({});
 
   const navigate = useNavigate();
