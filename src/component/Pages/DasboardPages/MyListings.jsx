@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import UserLayout from "./UserLayout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter, faLocationPin } from "@fortawesome/free-solid-svg-icons";
 import "../../../styles/UserDashboard/my_listings.scss";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import moment from 'moment';
 
 const MyListings = () => {
   return (
@@ -15,6 +17,20 @@ const MyListings = () => {
 
 const Content = () => {
   const [tab, setTab] = useState(false);
+  const [data, setData] = useState(null);
+
+  const items = Array.from({length: 50}, (_,index) => `Item ${index + 1}`);
+
+  const itemsPerPage = 8;
+
+  const [currentPage, setCurrentPage] = useState(1);
+
+  
+  
+
+  const { user } = useSelector(
+    (state) => state.auth
+  );
 
   const handleTabClick = () => {
     setTab(true);
@@ -23,6 +39,46 @@ const Content = () => {
   const handleNTabClick = () => {
     setTab(false);
   };
+
+  useEffect(()=>{
+     
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:8000/v1/properties/agent",{
+          method: "GET",
+          headers: {
+            "Authorization": `Bearer ${user.access_token}`
+          }
+        });
+
+        if(response.ok) {
+          const result = await response.json();
+          setData(result);
+          console.log(result);
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const totalNumberOfPages = Math.ceil((data ? data.length : 0) / itemsPerPage);
+
+  const pageNumbers = [];
+  for (let i = 1; i <= totalNumberOfPages; i++) {
+    pageNumbers.push(i);
+  }
+
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = data ? data.slice(indexOfFirstItem,indexOfLastItem) : [];
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  }
 
   return (
     <div className="my-listings">
@@ -70,13 +126,20 @@ const Content = () => {
         {tab ? (
           ""
         ) : (
-          <div className="listing-details">
+          <div>
+            <div>
+              {data && data.length > 0 && (
+                <div>
+                    {data && currentItems.map((item,index)=>{
+              return(
+                <div className="listing-details">
+            
             <div className="img-left">
-              <img src="/Pictures/Rectangle-244.png" alt="property-img" />
+              <img src={`https://homelanda-1d0d1907d8ae.herokuapp.com/v1/properties/images/${item.propertyImages[0]}`} alt="property-img" />
             </div>
             <div className="details-right">
               <div className="name-action">
-                <h2>Ossai Agent</h2>
+                <h2>{item.agent.name}</h2>
                 <select name="" id="">
                   <option value="">Action</option>
                   <option value="">Edit</option>
@@ -88,14 +151,14 @@ const Content = () => {
                 Warri Delta State
               </h3>
               <div className="details-time">
-                <p>Added: 21-03-2021</p>
-                <p>Updated: 11-07-2022</p>
+                <p>Create At {moment(item.createdAt).format('MM-DD-YYYY')}</p>
+                <p> Last Updated {moment(item.updatedAt).format('MM-DD-YYYY')}</p>
               </div>
               <p>Automatic Boost: 0</p>
               <div className="price-call-btn">
                 <p>
                   {" "}
-                  <span>90000000</span>/month
+                  <span>{item.pricePerMonth}</span>/month
                 </p>
                 <button>
                   <img src="/Pictures/telephone-call-1.png" alt="" />{" "}
@@ -104,20 +167,47 @@ const Content = () => {
               </div>
               <div className="facilaties">
                 <div className="toilet">
-                  <img src="/Pictures/water-closet-1.png" alt="" /> 1 guest
+                  <img src="/Pictures/water-closet-1.png" alt="" /> {item.tiolets} guest
                   toilet
                 </div>
                 <div className="bedroom">
-                  <img src="/Pictures/double-bed-1.png" alt="" /> 6 bedrooms
+                  <img src="/Pictures/double-bed-1.png" alt="" /> {item.bedrooms} bedrooms
                 </div>
                 <div className="bathroom">
-                  <img src="/Pictures/bath-1.png" alt="" /> 6 bathrooms
+                  <img src="/Pictures/bath-1.png" alt="" /> {item.bathrooms} bathrooms
                 </div>
                 <input type="checkbox" />
               </div>
             </div>
           </div>
+              )
+            })}
+                </div>
+              )}
+            </div>
+            
+          </div>
+          
+          
         )}
+
+          <div className="page-numbers">
+              <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1}>
+              Prev
+            </button>
+              {pageNumbers.map(number => (
+              <p key={number} onClick={() => paginate(number)} className={currentPage === number ? 'active' : ''}>
+                {number}
+              </p>
+            ))}
+
+              <button onClick={() => paginate(currentPage + 1)} disabled={currentItems.length < itemsPerPage}>
+              Next
+              </button>
+          </div>
+
+       
+        
       </div>
     </div>
   );
