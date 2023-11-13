@@ -42,7 +42,7 @@ const Content = ()=>{
      
         const fetchData = async () => {
           try {
-            const response = await fetch("http://localhost:8000/v1/users",{
+            const response = await fetch("https://homelanda-1d0d1907d8ae.herokuapp.com/v1/users",{
               method: "GET",
               headers: {
                 "Authorization": `Bearer ${user.access_token}`
