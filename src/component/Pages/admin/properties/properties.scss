@@ -83,3 +83,13 @@
 
 
 }
+
+.page-numbers{
+    margin: 30px;
+    display: flex;
+    gap: 20px;
+
+    button{
+      background: #000000;
+    }
+  }
