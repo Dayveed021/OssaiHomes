@@ -146,11 +146,11 @@
       }
       .price{
         display: flex;
-        width: 100%;
+        width: 90%;
         gap: 20px;
         .min-price{
           display: flex;
-          width: 40%;
+          width: 50%;
           border-radius: 6px;
           border: 0.5px solid #000;
           padding: 10px 10px;
@@ -470,7 +470,7 @@
 
     .search-input{
       width: 30%;
-      height: 350px;
+      height: 430px;
       border: 0.5px solid #000;
       border-radius: 10px;
       background: #fff;
@@ -478,6 +478,9 @@
       padding-bottom: 50px;
       padding-top: 10px;
       margin-top: 60px;
+      @media screen and (max-width: 1180px) {
+        width: 40%;
+      }
       
       @media screen and (max-width: 769px) {
         display: none;
@@ -497,6 +500,7 @@
           }
         }
         form{
+          height: 100%;
           .location{
             width: 90%;
             padding: 10px 16px;
@@ -504,7 +508,7 @@
             border: 0.5px solid #000;
             margin-bottom: 10px;
             @media screen and (max-width: 1180px) {
-              width: 80%;
+              width: 90%;
             }
             input{
               border: none;
@@ -526,7 +530,7 @@
             border: 0.5px solid #000;
             margin-bottom: 10px;
             @media screen and (max-width: 1180px) {
-              width: 80%;
+              width: 90%;
             }
             select{
               border: none;
@@ -535,26 +539,27 @@
           }
           .price{
             display: flex;
-            width: 99%;
+            width: 90%;
             gap: 10px;
             @media screen and (max-width: 1180px) {
-              width: 99%;
+              width: 90%;
             }
             .min-price{
               display: flex;
-              width: 40%;
+              width: 50%;
               border-radius: 6px;
               border: 0.5px solid #000;
-              padding: 10px 16px;
+              padding: 10px 10px;
               margin-bottom: 10px;
               justify-content: space-between;
+              align-items: center;
               @media screen and (max-width: 1180px) {
                 padding: 10px 5px;
                 width: 50%;
               }
               label{
                 font-size: 14px;
-                width: 50%;
+                width: 70%;
                 background: transparent;
                 @media screen and (max-width: 1180px) {
                   font-size: 10px;
@@ -564,6 +569,7 @@
               select{
                 border: none;
                 background: transparent;
+                width: 20%;
                 @media screen and (max-width: 1180px) {
                   width: 20%;
                 }
@@ -578,7 +584,7 @@
             border: 0.5px solid #000;
             margin-bottom: 10px;
             @media screen and (max-width: 1180px) {
-              width: 80%;
+              width: 90%;
             }
             input{
               border: none;
