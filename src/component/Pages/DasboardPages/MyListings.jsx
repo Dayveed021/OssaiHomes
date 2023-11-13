@@ -19,7 +19,6 @@ const Content = () => {
   const [tab, setTab] = useState(false);
   const [data, setData] = useState(null);
 
-  const items = Array.from({length: 50}, (_,index) => `Item ${index + 1}`);
 
   const itemsPerPage = 8;
 
@@ -54,7 +53,6 @@ const Content = () => {
         if(response.ok) {
           const result = await response.json();
           setData(result);
-          console.log(result);
         }
       } catch (error) {
         console.error('Error fetching data:', error);
