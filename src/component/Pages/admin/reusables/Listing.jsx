@@ -30,11 +30,11 @@ const Listing = ({propertyImages,propertyTitle,address,city,state,created,update
                         </div>
                         <div className="apartment-details">
                             <div>
-                                <img src="../../flaticons/water-closet1.png" alt="" />
+                                <img src="/Pictures/double-bed-1.png" alt="" />
                                 <p>{bedrooms} Bedrooms</p>
                             </div>
                             <div>
-                                <img src="../../flaticons/water-closet1.png" alt="" />
+                                <img src="/Pictures/bath-1.png" alt="" />
                                 <p>{bathrooms} bathrooms</p>
                             </div>
                             <div>
