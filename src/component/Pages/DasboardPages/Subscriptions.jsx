@@ -18,18 +18,30 @@ const Content = () => {
 
   const [data, setData] = useState(null);
   const [subscriptionResults, setSubscriptionResults] = useState({});
+  const [ planDuration, setPlanDuration] = useState({});
 
   const navigate = useNavigate();
 
   const { user } = useSelector(
     (state) => state.auth
   );
+
+  
+
   const subscribe = async (id) => {
 
     try {
+      const subDetails = {
+        plan: planDuration[id] || "monthly"
+      };
+
+      console.log(subDetails);
+      
       const response = await fetch(`https://homelanda-1d0d1907d8ae.herokuapp.com/v1/subscriptions/buypackage/${id}`, {
         method: 'PATCH',
+        body: JSON.stringify(subDetails),
         headers: {
+          'Content-Type': 'application/json',
           "Authorization": `Bearer ${user.access_token}`
         }
       });
@@ -105,6 +117,17 @@ const Content = () => {
               <li>0 Featured Listing</li>
               <li>0 Popular Listing</li>
             </ul>
+            <div className="inputs">
+                    <label htmlFor="">Duration</label>
+                    <select name="category" id="" value={planDuration[item._id] || "monthly"} onChange={(e)=> setPlanDuration((prevDurations) => ({
+                      ...prevDurations,
+                      [item._id]: e.target.value.toString()}))} required>
+                      <option value="monthly">Select</option>
+                      <option value="monthly">Monthly</option>
+                      <option value="bi-annual">Bi-annual</option>
+                      <option value="annual">Annual</option>
+                    </select>
+                  </div>
             <button onClick={() => subscribe(item._id)} >
               <h3>SignUp</h3>
             </button>
