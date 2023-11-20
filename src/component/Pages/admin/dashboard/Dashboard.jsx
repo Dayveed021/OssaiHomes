@@ -45,7 +45,7 @@ const Content = ()=>{
               setProperties(lastFiveProperties);
             }
           } catch (error) {
-            console.error('Error fetching data:', error);
+            console.error('Error fetching properties:', error);
           }
         };
 
@@ -66,7 +66,7 @@ const Content = ()=>{
                  
                 }
               } catch (error) {
-                console.error('Error fetching data:', error);
+                console.error('Error fetching properties:', error);
               }
         }
     
