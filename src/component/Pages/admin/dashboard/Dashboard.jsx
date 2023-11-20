@@ -1,7 +1,11 @@
+import { useState, useEffect } from "react";
 import AdminLayout from "../home/AdminLayout"
 import ActivitesBlock from "../reusables/ActivitesBlock";
 import Listing from "../reusables/Listing";
 import "./dashboard.scss";
+import { useSelector } from "react-redux";
+import moment from "moment";
+import { Link } from "react-router-dom";
 
 
 const Dashboard = ()=>{
@@ -14,6 +18,40 @@ const Dashboard = ()=>{
 }
 
 const Content = ()=>{
+
+    const [properties, setProperties] = useState([]);
+
+    const { user } = useSelector(
+        (state) => state.auth
+      );
+
+    useEffect(()=>{
+     
+        const fetchData = async () => {
+          try {
+            const response = await fetch("https://homelanda-1d0d1907d8ae.herokuapp.com/v1/properties",{
+              method: "GET",
+              headers: {
+                "Authorization": `Bearer ${user.access_token}`
+              }
+            });
+    
+            if(response.ok) {
+              const result = await response.json();
+
+              const lastFiveProperties = result.slice(-5);
+
+              setProperties(lastFiveProperties);
+            }
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }
+        };
+    
+        fetchData();
+      }, []);
+
+
     return (
         <div className="dashboard-content">
             <ActivitesBlock 
@@ -137,19 +175,34 @@ const Content = ()=>{
                 <h2>Latest Listing</h2>
                 <img src="../../flaticons/customer2.png" alt="icon" />
             </div>
-            <div className="listing">
-                <Listing />
-                <Listing />
-                <Listing />
-                <Listing />           
-                <div className="btn-btn">
+            {properties && properties.length > 0 && (
+                <div className="listing">
+                    {properties && properties.map((item)=>{
+                        return(<Listing 
+                            propertyImages={item.propertyImages[0]}
+                            propertyTitle={item.propertyTitle}
+                            address={item.address}
+                            city={item.city}
+                            state={item.state}
+                            created={moment(item.createdAt).format("MM-DD-YYYY")}
+                            updated={moment(item.updatedAt).format("MM-DD-YYYY")}
+                            price={item.pricePerMonth}
+                            bathrooms={item.bathrooms}
+                            bedrooms={item.bedrooms}
+                            tiolets={item.tiolets}
+                        /> )
+                    })}
+                        
+                <Link to="/admin/properties" className="btn-btn">
                     <button className="btn">View all
-                        <img src="flaticons/search2.png" alt="icon" />
+                        <img src="/flaticons/search2.png" alt="icon" />
                     </button>
-                </div>
+                </Link>
             
 
             </div>
+            )}
+            
             
            
         </div>
