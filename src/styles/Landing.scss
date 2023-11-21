@@ -76,7 +76,7 @@
         }
         select {
           border-radius: 5px;
-          padding: 10px 15px 10px 15px;
+          padding: 10px 0px;
           width: 20%;
           font-weight: 500;
           @media screen and (max-width: 769px) {
@@ -294,7 +294,7 @@
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
         gap: 20px;
         width: 100%;
         flex-wrap: wrap;
