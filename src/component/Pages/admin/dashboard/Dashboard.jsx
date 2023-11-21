@@ -97,7 +97,6 @@ const Content = ()=>{
         fetchTransactions();
       }, []);
 
-      console.log(agents);
 
     return (
         <div className="dashboard-content">
@@ -181,11 +180,11 @@ const Content = ()=>{
                 </table>
                 )}
                 
-                <div className="btn-div">
+                <Link to="/admin/transactions" className="btn-div">
                     <button className="btn">View all
                         <img src="/flaticons/search2.png" alt="icon" />
                     </button>
-                </div>
+                </Link>
                 
             </div>
             <div className="transaction-header">
