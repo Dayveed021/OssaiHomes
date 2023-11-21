@@ -145,7 +145,7 @@ const Content = ()=>{
               <button onClick={() => paginate(currentPage + 1)} disabled={currentItems.length < itemsPerPage}>
               Next
               </button>
-          </div>
+        </div>
                 
             </div>
             </div>
