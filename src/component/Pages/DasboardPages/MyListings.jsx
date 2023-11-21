@@ -53,7 +53,6 @@ const Content = () => {
         if (response.ok) {
           const result = await response.json();
           setData(result);
-          console.log(result);
         }
       } catch (error) {
         console.error("Error fetching data:", error);

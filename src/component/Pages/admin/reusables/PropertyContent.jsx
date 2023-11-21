@@ -26,22 +26,7 @@ const PropertyContent = () => {
                         <img src="../../flaticons/expand-button3.png" alt="" />
                     </div>
                 </div>
-                <Listing />
-                <Listing />
-                <Listing />
-                <Listing />
-                <div className="select-action" style={{marginBottom:"2rem"}}>
-                    <div className="select">
-                        <p>Select all</p>
-                        <div className="btn-green">
-                        <img src="../../flaticons/check4.png" alt="" />
-                        </div>
-                    </div>
-                    <div className="action">
-                        <p>Action</p>
-                        <img src="../../flaticons/expand-button3.png" alt="" />
-                    </div>
-                </div>
+            
 
 
 

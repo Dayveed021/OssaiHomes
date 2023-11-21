@@ -1,7 +1,11 @@
+import { useState, useEffect } from "react";
 import AdminLayout from "../home/AdminLayout"
 import ActivitesBlock from "../reusables/ActivitesBlock";
 import Listing from "../reusables/Listing";
 import "./dashboard.scss";
+import { useSelector } from "react-redux";
+import moment from "moment";
+import { Link } from "react-router-dom";
 
 
 const Dashboard = ()=>{
@@ -14,6 +18,64 @@ const Dashboard = ()=>{
 }
 
 const Content = ()=>{
+
+    const [properties, setProperties] = useState([]);
+    const [agents, setAgents] = useState([]);
+
+    const { user } = useSelector(
+        (state) => state.auth
+      );
+
+    useEffect(()=>{
+     
+        const fetchData = async () => {
+          try {
+            const response = await fetch("https://homelanda-1d0d1907d8ae.herokuapp.com/v1/properties",{
+              method: "GET",
+              headers: {
+                "Authorization": `Bearer ${user.access_token}`
+              }
+            });
+    
+            if(response.ok) {
+              const result = await response.json();
+
+              const lastFiveProperties = result.slice(-5);
+
+              setProperties(lastFiveProperties);
+            }
+          } catch (error) {
+            console.error('Error fetching properties:', error);
+          }
+        };
+
+        const fetchAgents = async () => {
+            try {
+                const response = await fetch("https://homelanda-1d0d1907d8ae.herokuapp.com/v1/users",{
+                  method: "GET",
+                  headers: {
+                    "Authorization": `Bearer ${user.access_token}`
+                  }
+                });
+        
+                if(response.ok) {
+                  const data = await response.json();
+                  const lastFiveAgents = data.slice(-5);
+
+                  setAgents(lastFiveAgents);
+                 
+                }
+              } catch (error) {
+                console.error('Error fetching properties:', error);
+              }
+        }
+    
+        fetchData();
+        fetchAgents();
+      }, []);
+
+      console.log(agents);
+
     return (
         <div className="dashboard-content">
             <ActivitesBlock 
@@ -30,7 +92,8 @@ const Content = ()=>{
                 <img src="../../flaticons/customer2.png" alt="icon" />
             </div>
             <div className="admin-table1">
-                <table>
+                {agents && agents.length > 0 && (
+                    <table>
                     <tr>
                         <th>Agent Name</th>
                         <th>Plan</th>
@@ -38,40 +101,27 @@ const Content = ()=>{
                         <th>Properties</th>
                         <th>Phone Number</th>
                     </tr>
-                    <tr>
-                        <td>Akara Jasper</td>
-                        <td>Basic Plan</td>
-                        <td>1st Match 2023</td>
-                        <td>200 properties</td>                                               
-                        <td>09054523478</td>
-                    </tr>
-                    <tr>
-                        <td>Akara Jasper</td>
-                        <td>Basic Plan</td>
-                        <td>1st Match 2023</td>
-                        <td>200 properties</td>                                               
-                        <td>09054523478</td>
-                    </tr>
-                    <tr>
-                        <td>Akara Jasper</td>
-                        <td>Basic Plan</td>
-                        <td>1st Match 2023</td>
-                        <td>200 properties</td>                                               
-                        <td>09054523478</td>
-                    </tr>
-                    <tr>
-                        <td>Akara Jasper</td>
-                        <td>Basic Plan</td>
-                        <td>1st Match 2023</td>
-                        <td>200 properties</td>                                               
-                        <td>09054523478</td>
-                    </tr>
-                </table>
-                <div className="btn-div">
+                    {agents && agents.map((agent)=>{
+                        return(
+                            <tr>
+                                <td>{agent.name}</td>
+                                <td>{agent.subcribeToPackage}</td>
+                                <td>{moment(agent.createdAt).format('MM-DD-YYYY')}</td>
+                                <td>{agent.properties.length}</td>                                               
+                                <td>{agent.phone}</td>
+                            </tr>
+                        )
+                    })}
+                    
+                 
+                    </table>
+                )}
+                
+                <Link to="/admin/agents" className="btn-div">
                     <button className="btn">View all
-                        <img src="flaticons/search2.png" alt="icon" />
+                        <img src="/flaticons/search2.png" alt="icon" />
                     </button>
-                </div>
+                </Link>
                 
             </div>
             <div className="transaction-header">
@@ -128,28 +178,43 @@ const Content = ()=>{
                 </table>
                 <div className="btn-div">
                     <button className="btn">View all
-                        <img src="flaticons/search2.png" alt="icon" />
+                        <img src="/flaticons/search2.png" alt="icon" />
                     </button>
                 </div>
                 
             </div>
             <div className="transaction-header">
                 <h2>Latest Listing</h2>
-                <img src="../../flaticons/customer2.png" alt="icon" />
+                <img src="/flaticons/customer2.png" alt="icon" />
             </div>
-            <div className="listing">
-                <Listing />
-                <Listing />
-                <Listing />
-                <Listing />           
-                <div className="btn-btn">
+            {properties && properties.length > 0 && (
+                <div className="listing">
+                    {properties && properties.map((item)=>{
+                        return(<Listing 
+                            propertyImages={item.propertyImages[0]}
+                            propertyTitle={item.propertyTitle}
+                            address={item.address}
+                            city={item.city}
+                            state={item.state}
+                            created={moment(item.createdAt).format("MM-DD-YYYY")}
+                            updated={moment(item.updatedAt).format("MM-DD-YYYY")}
+                            price={item.pricePerMonth}
+                            bathrooms={item.bathrooms}
+                            bedrooms={item.bedrooms}
+                            tiolets={item.tiolets}
+                        /> )
+                    })}
+                        
+                <Link to="/admin/properties" className="btn-btn">
                     <button className="btn">View all
-                        <img src="flaticons/search2.png" alt="icon" />
+                        <img src="/flaticons/search2.png" alt="icon" />
                     </button>
-                </div>
+                </Link>
             
 
             </div>
+            )}
+            
             
            
         </div>
