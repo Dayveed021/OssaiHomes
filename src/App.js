@@ -31,7 +31,7 @@ const App = () => {
       <Routes>
         <Route path="/" index element={<LandingPage />} />
         <Route path="/buy" element={<Buyy />} />
-        <Route path="/property" element={<SingleProperty />} />
+        <Route path="/property/:propertyId" element={<SingleProperty />} />
         <Route path="/list" element={<List />} />
         <Route path="/rent" element={<Rent />} />
         <Route path="/mylist" element={<MyList />} />
@@ -82,7 +82,7 @@ const App = () => {
           }
         />
         <Route path="/dashboard/publish_property" element={<PublishPage />} />
-        <Route path="/dashboard/my_listings" element={<MyListings />} />
+        <Route path="/dashboard/my_listings/" element={<MyListings />} />
         <Route path="/dashboard/subscription" element={<Subscriptions />} />
         <Route path="/dashboard/favourites" element={<Favourites />} />
         <Route path="/dashboard/profile" element={<AgentProfile />} />
