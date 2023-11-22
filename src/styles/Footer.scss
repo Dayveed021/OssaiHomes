@@ -19,13 +19,13 @@
     display: flex;
     gap: 14px;
     flex-direction: column;
+    @media screen and (max-width: 1180px) {
+      padding-left: 5rem;
+    }
     @media screen and (max-width: 768px) {
       padding-left: 0px;
       margin-top: 0px;
       align-items: center;
-    }
-    @media screen and (max-width: 1180px) {
-      padding-left: 5rem;
     }
 
     h1 {

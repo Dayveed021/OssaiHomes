@@ -25,6 +25,7 @@ export const Navbar = () => {
           <Link to="/" className="logo">
             HomeLander
           </Link>
+          <div></div>
         </div>
         <nav className={toggle ? "nav-items" : "null"}>
           <ul>
@@ -55,7 +56,9 @@ export const Navbar = () => {
             <li>
               <NavLink
                 to="/mylist"
-                className={({ isActive }) => (isActive ? "active" : "nav-list")}
+                className={({ isActive }) =>
+                  isActive ? "m-active" : "nav-list"
+                }
               >
                 MyList
               </NavLink>
@@ -64,7 +67,7 @@ export const Navbar = () => {
               <NavLink
                 to="/signup"
                 className={({ isActive }) =>
-                  isActive ? "active" : "m-nav-list"
+                  isActive ? "m-active" : "m-nav-list"
                 }
               >
                 Sign Up

@@ -39,7 +39,7 @@ const LandingPage = () => {
     const { name, value } = e.target;
     setSearchParams((prevSearchParams) => ({
       ...prevSearchParams,
-      [name]: value,
+      [name]: value.toLowerCase(),
     }));
   };
 
@@ -136,27 +136,6 @@ const LandingPage = () => {
                 }}
               >
                 <div className="search-props">
-                  <select
-                    name="type"
-                    id=""
-                    value={searchParams.type}
-                    onChange={handleInputChange}
-                  >
-                    <option value="">Type</option>
-                    <option value="Buy">Buy</option>
-                    <option value="Rent">Rent </option>
-                  </select>
-                  <select
-                    name="category"
-                    id=""
-                    value={searchParams.category}
-                    onChange={handleInputChange}
-                  >
-                    <option value="">Category</option>
-                    <option value="Duplex">Duplex</option>
-                    <option value="Mansion">Mansion</option>
-                    <option value="Apartment">Apartment</option>
-                  </select>
                   <input
                     type="text"
                     placeholder="City"
@@ -164,6 +143,30 @@ const LandingPage = () => {
                     value={searchParams.city}
                     onChange={handleInputChange}
                   />
+                  <div className="select">
+                    <select
+                      name="type"
+                      id=""
+                      value={searchParams.type}
+                      onChange={handleInputChange}
+                    >
+                      <option value="">Type</option>
+                      <option value="Buy">Buy</option>
+                      <option value="Rent">Rent </option>
+                    </select>
+                    <select
+                      name="category"
+                      id=""
+                      value={searchParams.category}
+                      onChange={handleInputChange}
+                    >
+                      <option value="">Category</option>
+                      <option value="Duplex">Duplex</option>
+                      <option value="Mansion">Mansion</option>
+                      <option value="Apartment">Apartment</option>
+                    </select>
+                  </div>
+
                   <button className="search-btn" onClick={performSearch}>
                     Search
                   </button>

@@ -32,10 +32,13 @@
         align-items: center;
         justify-content: space-between;
         flex-direction: column;
-        gap: 16px;
+        gap: 10px;
         width: 70%;
         @media screen and (max-width: 769px) {
           width: 95%;
+        }
+        input {
+          width: 100%;
         }
       }
       h1 {
@@ -64,25 +67,27 @@
       .search-props {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
         width: 100%;
         flex-wrap: wrap;
         gap: 10px;
-        @media screen and (max-width: 964px) {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          grid-template-rows: 1fr 1fr;
-          gap: 16px;
-        }
-        select {
-          border-radius: 5px;
-          padding: 10px 0px;
-          width: 20%;
-          font-weight: 500;
-          @media screen and (max-width: 769px) {
+        .select {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          width: 100%;
+          select {
+            border-radius: 5px;
+            padding: 10px 0px;
             width: 100%;
+            font-weight: 500;
+            @media screen and (max-width: 769px) {
+              width: 100%;
+            }
           }
         }
+
         @media screen and (max-width: 769px) {
           justify-content: center !important;
         }

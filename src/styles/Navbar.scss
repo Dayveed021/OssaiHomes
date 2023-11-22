@@ -18,7 +18,10 @@
   position: sticky;
   top: 0px;
   z-index: 100;
-  
+  padding: 0px 30px;
+  @media screen and (max-width: 768px) {
+    padding: 0px;
+  }
 
   nav {
     display: flex;
@@ -26,7 +29,7 @@
     justify-content: space-between;
     width: 100%;
     padding: 0px 20px 0px 0px;
-    
+
     .btn {
       border: none;
       padding: 10px 20px;
@@ -47,7 +50,6 @@
       cursor: pointer;
       background-color: #3f7843;
       color: white;
-      margin-right: 8rem;
       @media screen and (max-width: 768px) {
         display: none;
       }
@@ -67,7 +69,13 @@
     }
   }
   .nav-main {
-    padding: 0px 0px 0px 20px;
+    padding: 0px 10px;
+    @media screen and (max-width: 768px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100% !important;
+    }
 
     .Hamburger {
       cursor: pointer;
@@ -80,14 +88,6 @@
       font-weight: 900;
       color: #3f7843;
       text-decoration: none;
-      margin-left: 8rem;
-      @media screen and (max-width: 1180px) {
-        margin-left: 4rem;
-      }
-      @media screen and (max-width: 769px) {
-        margin-left: 50px;
-        
-      }
     }
   }
 }
@@ -95,6 +95,10 @@
 @media screen and (max-width: 768px) {
   .nav {
     .nav-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
       .Hamburger {
         display: block;
       }
@@ -171,6 +175,23 @@
   font-weight: 500;
   @media screen and (max-width: 768px) {
     background-color: #a3cdf4;
+    display: block;
+    border-radius: 5px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 90%;
+    padding: 10px;
+    font-weight: 400;
+  }
+}
+
+.m-active {
+  display: none;
+  @media screen and (max-width: 768px) {
+    background-color: #a3cdf4;
+    display: block;
     border-radius: 5px;
     color: black;
     display: flex;
