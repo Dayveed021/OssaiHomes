@@ -13,7 +13,7 @@ export const Navbar = () => {
     setToggle(!toggle);
   };
 
-  const user = useSelector((state) => state?.auth?.user);
+  const { user } = useSelector((state) => state.auth);
 
   return (
     <>
@@ -57,6 +57,8 @@ export const Navbar = () => {
               </NavLink>
             </li>
             {user ? (
+              ""
+            ) : (
               <li>
                 <NavLink
                   to="/signup"
@@ -67,10 +69,10 @@ export const Navbar = () => {
                   Sign Up
                 </NavLink>
               </li>
-            ) : (
-              ""
             )}
             {user ? (
+              ""
+            ) : (
               <li>
                 <NavLink
                   to="/login"
@@ -81,8 +83,6 @@ export const Navbar = () => {
                   Log In
                 </NavLink>
               </li>
-            ) : (
-              ""
             )}
           </ul>
           <ul className="ul-btn">
