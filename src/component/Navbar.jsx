@@ -3,6 +3,7 @@ import { NavLink, Outlet, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../styles/Navbar.scss";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from "react-redux";
 import "../styles/Login.scss";
 
 export const Navbar = () => {
@@ -11,6 +12,8 @@ export const Navbar = () => {
     console.log("clicked");
     setToggle(!toggle);
   };
+
+  const { user } = useSelector((state) => state.auth.user);
 
   return (
     <>
@@ -63,26 +66,34 @@ export const Navbar = () => {
                 MyList
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/signup"
-                className={({ isActive }) =>
-                  isActive ? "m-active" : "m-nav-list"
-                }
-              >
-                Sign Up
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/login"
-                className={({ isActive }) =>
-                  isActive ? "active" : "m-nav-list"
-                }
-              >
-                Log In
-              </NavLink>
-            </li>
+            {user ? (
+              <li>
+                <NavLink
+                  to="/signup"
+                  className={({ isActive }) =>
+                    isActive ? "m-active" : "m-nav-list"
+                  }
+                >
+                  Sign Up
+                </NavLink>
+              </li>
+            ) : (
+              ""
+            )}
+            {user ? (
+              <li>
+                <NavLink
+                  to="/login"
+                  className={({ isActive }) =>
+                    isActive ? "active" : "m-nav-list"
+                  }
+                >
+                  Log In
+                </NavLink>
+              </li>
+            ) : (
+              ""
+            )}
           </ul>
           <ul className="ul-btn">
             <NavLink to="/signup">

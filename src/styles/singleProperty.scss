@@ -197,7 +197,7 @@
     }
     @media screen and (max-width: 769px) {
       flex-direction: column;
-      margin-inline: 10px;
+      margin-inline: 0px;
       width: 100%;
       overflow-x: hidden;
     }
@@ -222,7 +222,7 @@
         .next {
           position: absolute;
           top: 220px;
-          left: 760px;
+          left: 90%;
           cursor: pointer;
 
           @media screen and (max-width: 1180px) {
@@ -230,8 +230,8 @@
             top: 140px;
           }
           @media screen and (max-width: 769px) {
-            left: 310px;
-            top: 100px;
+            top: 45%;
+            left: 87%;
           }
         }
 
@@ -245,8 +245,8 @@
             top: 140px;
           }
           @media screen and (max-width: 769px) {
-            top: 100px;
-            left: 25px;
+            top: 45%;
+            right: 87%;
           }
         }
 
@@ -276,6 +276,7 @@
         width: 100%;
         position: relative;
         margin-block: 10px;
+        overflow: auto;
         @media screen and (max-width: 769px) {
           display: none;
         }
@@ -329,16 +330,18 @@
           display: flex;
           width: 100%;
           gap: 10px;
+          overflow: auto;
 
           .slide {
-            width: 20%;
-            height: 112px;
+            width: 30%;
+            height: 92px;
             @media screen and (max-width: 769px) {
               width: 28%;
             }
             img {
               width: 100%;
               height: 100%;
+              border-radius: 5px;
             }
           }
         }
@@ -562,10 +565,14 @@
     }
 
     .agent-filter {
-      width: 32%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%;
       @media screen and (max-width: 769px) {
         width: 100%;
         margin-bottom: 20px;
+        padding: 0 20px;
       }
 
       .agent-contact {
@@ -585,7 +592,7 @@
           top: 10px;
           margin-left: auto;
           margin-right: auto;
-          width: 70%;
+          width: 100%;
         }
 
         h3 {

@@ -8,6 +8,7 @@ import {
   allProperties,
   singleProperty,
 } from "../../redux/properties/propertySlice";
+import { RWebShare } from "react-web-share";
 
 const SingleProperty = () => {
   const { propertyId } = useParams();
@@ -176,7 +177,7 @@ const SingleProperty = () => {
         )}
         <div className="property-agent">
           <div className="property">
-            <Carousel items={items} />;
+            <Carousel items={items} />
             <Gallery items={items} />
             <GalleryMobile items={items} />
             <div className="agent-price">
@@ -249,7 +250,6 @@ const SingleProperty = () => {
               ></iframe>
             </div>
           </div>
-          ;
           <div className="agent-filter">
             <div className="agent-contact">
               <h3>Contact Agent</h3>
@@ -270,13 +270,14 @@ const SingleProperty = () => {
                   <img src="/flaticons/share.png" alt="" />
                   <p>Share</p>
                 </div>
+
                 <div className="share">
                   <img src="/flaticons/favourite.png" alt="" />
                   <p>Favourite</p>
                 </div>
               </div>
             </div>
-            <div className="advanced-search">
+            {/* <div className="advanced-search">
               <h3>Advanced Search filter</h3>
               <form action="">
                 <div className="location">
@@ -353,7 +354,7 @@ const SingleProperty = () => {
                   <input type="search" placeholder="keywords e.g pool,garage" />
                 </div>
               </form>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="similar-properties">
@@ -466,13 +467,13 @@ const Gallery = ({ items }) => {
 
   return (
     <div className="gallery">
-      <img
+      {/* <img
         className="prev-btn"
         onClick={prevSlide}
         disabled={startIdx === 0}
         src="/flaticons/smallprev.png"
         alt=""
-      />
+      /> */}
       <div className="slides-container">
         {items.slice(startIdx, startIdx + 5).map((image, index) => (
           <div className="slide" key={index}>
@@ -481,13 +482,13 @@ const Gallery = ({ items }) => {
         ))}
       </div>
 
-      <img
+      {/* <img
         className="next-btn"
         onClick={nextSlide}
         disabled={startIdx === items.length - 5}
         src="/flaticons/smallnext.png"
         alt=""
-      />
+      /> */}
     </div>
   );
 };
@@ -505,13 +506,13 @@ const GalleryMobile = ({ items }) => {
 
   return (
     <div className="gallerymobile">
-      <img
+      {/* <img
         className="prev-btn"
         onClick={prevSlide}
         disabled={startIdx === 0}
         src="/flaticons/smallprev.png"
         alt=""
-      />
+      /> */}
       <div className="slides-container">
         {items.slice(startIdx, startIdx + 3).map((image, index) => (
           <div className="slide" key={index}>
@@ -520,13 +521,13 @@ const GalleryMobile = ({ items }) => {
         ))}
       </div>
 
-      <img
+      {/* <img
         className="next-btn"
         onClick={nextSlide}
         disabled={startIdx === items.length - 5}
         src="/flaticons/smallnext.png"
         alt=""
-      />
+      /> */}
     </div>
   );
 };
