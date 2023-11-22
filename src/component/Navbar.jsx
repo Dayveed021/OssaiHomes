@@ -13,7 +13,7 @@ export const Navbar = () => {
     setToggle(!toggle);
   };
 
-  const { user } = useSelector((state) => state.auth.user);
+  const user = useSelector((state) => state?.auth?.user);
 
   return (
     <>
@@ -54,16 +54,6 @@ export const Navbar = () => {
                 className={({ isActive }) => (isActive ? "active" : "nav-list")}
               >
                 List
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/mylist"
-                className={({ isActive }) =>
-                  isActive ? "m-active" : "nav-list"
-                }
-              >
-                MyList
               </NavLink>
             </li>
             {user ? (

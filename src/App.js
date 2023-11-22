@@ -7,7 +7,7 @@ import Transactions from "./component/Pages/admin/transactions/Transactions";
 import LandingPage from "./component/Pages/LandingPage";
 import { Buyy } from "./component/Pages/Buyy";
 import List from "./component/Pages/List";
-import MyList from "./component/Pages/MyList";
+import Search from "./component/Pages/Search";
 import AgentDetails from "./component/Pages/admin/agents/Agent-details";
 import Login from "./component/Pages/Login";
 import SignUp from "./component/Pages/SignUp";
@@ -34,7 +34,7 @@ const App = () => {
         <Route path="/property/:propertyId" element={<SingleProperty />} />
         <Route path="/list" element={<List />} />
         <Route path="/rent" element={<Rent />} />
-        <Route path="/mylist" element={<MyList />} />
+        <Route path="/mylist" element={<Search />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         {/* <Route
