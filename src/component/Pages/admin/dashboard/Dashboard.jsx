@@ -21,6 +21,7 @@ const Content = ()=>{
 
     const [properties, setProperties] = useState([]);
     const [agents, setAgents] = useState([]);
+    const [ transactions, setTransactions] = useState([]);
 
     const { user } = useSelector(
         (state) => state.auth
@@ -70,11 +71,32 @@ const Content = ()=>{
               }
         }
     
+        const fetchTransactions = async () => {
+            try {
+                const response = await fetch("https://homelanda-1d0d1907d8ae.herokuapp.com/v1/transactions",{
+                  method: "GET",
+                  headers: {
+                    "Authorization": `Bearer ${user.access_token}`
+                  }
+                });
+        
+                if(response.ok) {
+                  const data = await response.json();
+                  const lastFiveTransactions = data.slice(-5);
+
+                  setTransactions(lastFiveTransactions);
+                 
+                }
+              } catch (error) {
+                console.error('Error fetching Transactions:', error);
+              }
+        }
+
         fetchData();
         fetchAgents();
+        fetchTransactions();
       }, []);
 
-      console.log(agents);
 
     return (
         <div className="dashboard-content">
@@ -129,7 +151,8 @@ const Content = ()=>{
                 <img src="../../flaticons/customer2.png" alt="icon" />
             </div>
             <div className="admin-table1">
-                <table>
+                {transactions && transactions.length > 0 && (
+                    <table>
                     <tr>
                         <th>Name</th>
                         <th>Email Address</th>
@@ -139,48 +162,29 @@ const Content = ()=>{
                         <th>Plan</th>
                         <th>Number</th>
                     </tr>
-                    <tr>
-                        <td>Akara Jasper</td>
-                        <td>Akarajasper@gmail.com</td>
-                        <td>20th Match 2023</td>
-                        <td>9:30</td>
-                        <td>Upgrade</td>    
-                        <td>Bussiness+</td>                                          
-                        <td>09054523478</td>
-                    </tr>
-                    <tr>
-                        <td>Akara Jasper</td>
-                        <td>Akarajasper@gmail.com</td>
-                        <td>20th Match 2023</td>
-                        <td>9:30</td>
-                        <td>Upgrade</td>    
-                        <td>Bussiness+</td>                                          
-                        <td>09054523478</td>
-                    </tr>
-                    <tr>
-                        <td>Akara Jasper</td>
-                        <td>Akarajasper@gmail.com</td>
-                        <td>20th Match 2023</td>
-                        <td>9:30</td>
-                        <td>Upgrade</td>    
-                        <td>Bussiness+</td>                                          
-                        <td>09054523478</td>
-                    </tr>
-                    <tr>
-                        <td>Akara Jasper</td>
-                        <td>Akarajasper@gmail.com</td>
-                        <td>20th Match 2023</td>
-                        <td>9:30</td>
-                        <td>Upgrade</td>    
-                        <td>Bussiness+</td>                                          
-                        <td>09054523478</td>
-                    </tr>
+                    {transactions && transactions.map((transaction)=>{
+                        return(
+                            <tr>
+                                <td>{transaction.agent.name}</td>
+                                <td>{transaction.agent.email}</td>
+                                <td>{moment(transaction.createdAt).format('MM-DD-YYYY')}</td>
+                                <td>{moment(transaction.createdAt).format("HH:mm")}</td>
+                                <td>{transaction.type}</td>    
+                                <td>{transaction.subscription}</td>                                          
+                                <td>{transaction.agent.phone}</td>
+                            </tr>
+                        )
+                    })}
+                    
+    
                 </table>
-                <div className="btn-div">
+                )}
+                
+                <Link to="/admin/transactions" className="btn-div">
                     <button className="btn">View all
                         <img src="/flaticons/search2.png" alt="icon" />
                     </button>
-                </div>
+                </Link>
                 
             </div>
             <div className="transaction-header">
