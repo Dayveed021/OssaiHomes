@@ -24,17 +24,30 @@ import "react-toastify/dist/ReactToastify.css";
 import AgentProfile from "./component/Pages/DasboardPages/AgentProfile";
 import { AuthRedirect } from "./AuthRedirect";
 import PublishPage from "./component/Pages/DasboardPages/PublishPage";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+
+const ScrollToTop = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  return null;
+};
 
 const App = () => {
   return (
     <div>
+      <ScrollToTop />
       <Routes>
         <Route path="/" index element={<LandingPage />} />
         <Route path="/buy" element={<Buyy />} />
         <Route path="/property/:propertyId" element={<SingleProperty />} />
         <Route path="/list" element={<List />} />
         <Route path="/rent" element={<Rent />} />
-        <Route path="/mylist" element={<Search />} />
+        <Route path="/search" element={<Search />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         {/* <Route
@@ -61,10 +74,38 @@ const App = () => {
             </AuthRedirect>
           }
         />
-        <Route path="/admin/agents" element={<Agents />} />
-        <Route path="/admin/agents/details" element={<AgentDetails />} />
-        <Route path="/admin/transactions" element={<Transactions />} />
-        <Route path="/admin/properties" element={<Properties />} />
+        <Route
+          path="/admin/agents"
+          element={
+            <AuthRedirect adminRoute>
+              <Agents />
+            </AuthRedirect>
+          }
+        />
+        <Route
+          path="/admin/agents/details"
+          element={
+            <AuthRedirect adminRoute>
+              <AgentDetails />
+            </AuthRedirect>
+          }
+        />
+        <Route
+          path="/admin/transactions"
+          element={
+            <AuthRedirect adminRoute>
+              <Transactions />
+            </AuthRedirect>
+          }
+        />
+        <Route
+          path="/admin/properties"
+          element={
+            <AuthRedirect adminRoute>
+              <Properties />
+            </AuthRedirect>
+          }
+        />
         {/* <Route
           path="/dashboard"
           element={
@@ -81,12 +122,54 @@ const App = () => {
             </AuthRedirect>
           }
         />
-        <Route path="/dashboard/publish_property" element={<PublishPage />} />
-        <Route path="/dashboard/my_listings/" element={<MyListings />} />
-        <Route path="/dashboard/subscription" element={<Subscriptions />} />
-        <Route path="/dashboard/favourites" element={<Favourites />} />
-        <Route path="/dashboard/profile" element={<AgentProfile />} />
-        <Route path="/dashboard/help" element={<UserLayout />} />
+        <Route
+          path="/dashboard/publish_property"
+          element={
+            <AuthRedirect userRoute>
+              <PublishPage />
+            </AuthRedirect>
+          }
+        />
+        <Route
+          path="/dashboard/my_listings/"
+          element={
+            <AuthRedirect userRoute>
+              <MyListings />
+            </AuthRedirect>
+          }
+        />
+        <Route
+          path="/dashboard/subscription"
+          element={
+            <AuthRedirect userRoute>
+              <Subscriptions />
+            </AuthRedirect>
+          }
+        />
+        <Route
+          path="/dashboard/favourites"
+          element={
+            <AuthRedirect userRoute>
+              <Favourites />
+            </AuthRedirect>
+          }
+        />
+        <Route
+          path="/dashboard/profile"
+          element={
+            <AuthRedirect userRoute>
+              <AgentProfile />
+            </AuthRedirect>
+          }
+        />
+        <Route
+          path="/dashboard/help"
+          element={
+            <AuthRedirect userRoute>
+              <UserLayout />
+            </AuthRedirect>
+          }
+        />
       </Routes>
       <ToastContainer />
     </div>

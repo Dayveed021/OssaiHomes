@@ -21,7 +21,3 @@ export const AuthRedirect = ({ adminRoute, userRoute, children }) => {
 
   return children;
 };
-//   } else if (adminRoute && !admin) {
-//     toast.info("You are not an admin");
-//     return <Navigate to="/dashboard" />;
-//   }

@@ -8,7 +8,6 @@ import {
   allProperties,
   singleProperty,
 } from "../../redux/properties/propertySlice";
-import { RWebShare } from "react-web-share";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -18,14 +17,12 @@ const SingleProperty = () => {
   const dispatch = useDispatch();
   const property = useSelector((state) => state.property.data);
   const properties = useSelector((state) => state.property.allData);
-  // console.log(property, "here");
   useEffect(() => {
     dispatch(singleProperty(propertyId));
     dispatch(allProperties());
   }, []);
 
   const { propertyImages } = property;
-  console.log(propertyImages, "me");
 
   const items = [];
 
@@ -194,53 +191,25 @@ const SingleProperty = () => {
             </div>
             <div className="details">
               <div className="bedroom">
-                <p className="small">bathroom</p>
-                <p className="big">4 Bathrooms</p>
+                <p className="small">Sitting Room</p>
+                <p className="big">{property.sittingRoom} Sitting Room(s)</p>
               </div>
               <div className="bedroom">
                 <p className="small">bedroom</p>
-                <p className="big">4 Bedrooms</p>
+                <p className="big">{property.bedrooms} Bedroom(s)</p>
               </div>
               <div className="bedroom">
-                <p className="small">Guest Tiolet</p>
-                <p className="big">1 Guest Tiolet</p>
+                <p className="small">Tiolet</p>
+                <p className="big">{property.tiolets} Tiolet(s)</p>
               </div>
               <div className="bedroom">
                 <p className="small">Monthly price</p>
-                <p className="big">5000000 / month</p>
+                <p className="big">{property.pricePerMonth} / month</p>
               </div>
             </div>
             <div className="property-description">
               <h3>Property description</h3>
               <p>{property.propertyDesc}</p>
-            </div>
-            <h2 className="amenties-header">Amenties</h2>
-            <div className="amenities">
-              <div className="outdoor">
-                <h4>Outdoor</h4>
-                <ul>
-                  <li>Balcony</li>
-                  <li>Garage</li>
-                  <li>Pool</li>
-                  <li>Play Ground</li>
-                </ul>
-              </div>
-              <div className="outdoor">
-                <h4>House</h4>
-                <ul>
-                  <li>Furnishing</li>
-                  <li>Smoke Detector</li>
-                  <li>Water Heater</li>
-                  <li>Parking Garage</li>
-                </ul>
-              </div>
-              <div className="outdoor">
-                <h4>Management</h4>
-                <ul>
-                  <li>On site</li>
-                  <li>Emergency maintence</li>
-                </ul>
-              </div>
             </div>
             <div className="map">
               <h4>Map</h4>
@@ -362,51 +331,6 @@ const SingleProperty = () => {
         <div className="similar-properties">
           <h2>Similar properties</h2>
           {properties.slice(0, 3).map((all) => (
-            // <div className="listing-details" key={all._id}>
-            //   <div className="img-left">
-            //     <img
-            //       src={`https://homelanda-1d0d1907d8ae.herokuapp.com/v1/properties/images/${all.propertyImages[0]}`}
-            //       alt="Images Loading"
-            //     />
-            //   </div>
-            //   <div className="details-right">
-            //     <h3>{all.agent?.name}</h3>
-            //     <p>
-            //       {all.propertyDesc?.length > 30
-            //         ? all.propertyDesc.slice(0, 33) + "..."
-            //         : all.propertyDesc}
-            //     </p>
-            //     <h4>
-            //       {all.propertyLocation?.length > 27
-            //         ? all.propertyLocation.slice(0, 30) + "..."
-            //         : all.propertyLocation}
-            //     </h4>
-            //     <div className="price-call-btn">
-            //       <p>
-            //         <span>{all.pricePerMonth}</span>/ month
-            //       </p>
-            //       <button>
-            //         <img src="/Pictures/telephone-call-1.png" alt="" />{" "}
-            //         <span>Call</span>
-            //       </button>
-            //     </div>
-            //     <div className="facilaties">
-            //       <div className="toilet">
-            //         <img src="/Pictures/water-closet-1.png" alt="" /> 1 guest
-            //         toilet
-            //       </div>
-            //       <div className="bedroom">
-            //         <img src="/Pictures/double-bed-1.png" alt="" /> 6 bedrooms
-            //       </div>
-            //       <div className="bathroom">
-            //         <img src="/Pictures/bath-1.png" alt="" /> 6 bathrooms
-            //       </div>
-            //       <div className="heart">
-            //         <img src="/Pictures/heart-3.png" alt="" />
-            //       </div>
-            //     </div>
-            //   </div>
-            // </div>
             <div className="listing-details" key={all._id}>
               <div className="img-left">
                 <img

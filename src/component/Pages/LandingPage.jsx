@@ -39,12 +39,13 @@ const LandingPage = () => {
     const { name, value } = e.target;
     setSearchParams((prevSearchParams) => ({
       ...prevSearchParams,
-      [name]: value.toLowerCase(),
+      [name]:
+        name === "region" || name === "city" ? value.toLowerCase() : value,
     }));
   };
 
   const performSearch = () => {
-    navigate("/mylist", searchParams);
+    navigate("/search", searchParams);
 
     localStorage.setItem("region", searchParams.region);
     localStorage.setItem("category", searchParams.category);

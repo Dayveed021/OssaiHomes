@@ -92,6 +92,15 @@ const SignUp = () => {
                 </div>
                 <div className="input-box">
                   <input
+                    type="Phone number"
+                    required
+                    placeholder="Phone Number"
+                    value={mobile}
+                    onChange={(e) => setMobile(e.target.value)}
+                  />
+                </div>
+                <div className="input-box">
+                  <input
                     type="password"
                     required
                     placeholder="Password"

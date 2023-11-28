@@ -23,7 +23,7 @@ function Search() {
 
   // Dispatch the searchProperties action when parameters change
 
-  const property = useSelector((state) => state.search.data);
+  const results = useSelector((state) => state.search.data);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -166,7 +166,7 @@ function Search() {
           </div>
         )}
 
-        <h2> Showing Listings "{property[0]?.city}" in Nigeria</h2>
+        <h2> Showing Listings "{results[0]?.city}" in Nigeria</h2>
 
         <div className="search-result">
           <div className="search-listing">
@@ -177,17 +177,21 @@ function Search() {
                 <img src="/flaticons/expand-button3.png" alt="" />{" "}
               </button>
             </div>
-            {property.map((result) => (
-              <div className="listing-details">
+            {results.map((result) => (
+              <div className="listing-details" key={result._id}>
                 <div className="img-left">
                   <img
-                    src={`https://homelanda-1d0d1907d8ae.herokuapp.com/v1/properties/images/${result.propertyImages[0]}`}
+                    src={`https://homelanda-1d0d1907d8ae.herokuapp.com/v1/properties/images/${result?.propertyImages[0]}`}
                     alt="property-img"
                   />
                 </div>
                 <div className="details-right">
-                  <h3>{result.agent}</h3>
-                  <p>{result.propertyDesc}</p>
+                  <h3>{result.propertyTitle}</h3>
+                  <p>
+                    {result.propertyDesc?.length > 80
+                      ? result.propertyDesc.slice(0, 83) + "..."
+                      : result.propertyDesc}
+                  </p>
                   <h4>{result.propertyLocation}</h4>
                   <div className="price-call-btn">
                     <p>
@@ -209,7 +213,8 @@ function Search() {
                       {result.bedrooms} bedroom(s)
                     </div>
                     <div className="bathroom">
-                      <img src="/Pictures/bath-1.png" alt="" /> 6 bathroom(s)
+                      <img src="/Pictures/bath-1.png" alt="" />{" "}
+                      {result.bathrooms} bathroom(s)
                     </div>
                     <div className="heart">
                       <img src="/Pictures/heart-3.png" alt="" />
